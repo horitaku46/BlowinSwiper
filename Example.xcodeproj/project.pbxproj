@@ -19,6 +19,8 @@
 		61356FA32025B517009C0205 /* VerticalViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 61356F982025B517009C0205 /* VerticalViewController.storyboard */; };
 		61356FA42025B517009C0205 /* VerticalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61356F992025B517009C0205 /* VerticalViewController.swift */; };
 		61D0DD852025B744003AB105 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61D0DD842025B744003AB105 /* UIColorExtension.swift */; };
+		61D0DD872027395E003AB105 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61D0DD862027395E003AB105 /* NavigationController.swift */; };
+		61D0DD892028A628003AB105 /* nao.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 61D0DD882028A628003AB105 /* nao.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +40,8 @@
 		61356F982025B517009C0205 /* VerticalViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = VerticalViewController.storyboard; sourceTree = "<group>"; };
 		61356F992025B517009C0205 /* VerticalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerticalViewController.swift; sourceTree = "<group>"; };
 		61D0DD842025B744003AB105 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
+		61D0DD862027395E003AB105 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
+		61D0DD882028A628003AB105 /* nao.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = nao.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +96,7 @@
 			children = (
 				61356F892025B517009C0205 /* Assets.xcassets */,
 				61356F8A2025B517009C0205 /* Info.plist */,
+				61D0DD882028A628003AB105 /* nao.jpg */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -122,6 +127,7 @@
 			children = (
 				61356F8F2025B517009C0205 /* TabBarController.storyboard */,
 				61356F902025B517009C0205 /* TabBarController.swift */,
+				61D0DD862027395E003AB105 /* NavigationController.swift */,
 			);
 			path = TabBar;
 			sourceTree = "<group>";
@@ -220,6 +226,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				61D0DD892028A628003AB105 /* nao.jpg in Resources */,
 				61356F9A2025B517009C0205 /* Assets.xcassets in Resources */,
 				61356F9D2025B517009C0205 /* TabBarController.storyboard in Resources */,
 				61356FA32025B517009C0205 /* VerticalViewController.storyboard in Resources */,
@@ -236,6 +243,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				61356F9E2025B517009C0205 /* TabBarController.swift in Sources */,
+				61D0DD872027395E003AB105 /* NavigationController.swift in Sources */,
 				61D0DD852025B744003AB105 /* UIColorExtension.swift in Sources */,
 				61356F9C2025B517009C0205 /* AppDelegate.swift in Sources */,
 				61356FA42025B517009C0205 /* VerticalViewController.swift in Sources */,

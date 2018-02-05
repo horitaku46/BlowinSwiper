@@ -40,7 +40,7 @@
         <!--Item 1-->
         <scene sceneID="KiC-Ci-Tj0">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="XjC-df-ibL" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="XjC-df-ibL" customClass="NavigationController" customModule="Example" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item 1" id="jVp-w0-WEu"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="faU-hx-3rE">

@@ -18,6 +18,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pmg-VM-JZD">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kek-Bk-aZa">
                                 <rect key="frame" x="164" y="318" width="46" height="30"/>
                                 <state key="normal" title="Button"/>
@@ -30,16 +33,21 @@
                         <constraints>
                             <constraint firstItem="Kek-Bk-aZa" firstAttribute="centerX" secondItem="Sb1-lf-Ni8" secondAttribute="centerX" id="30c-cm-oKv"/>
                             <constraint firstItem="Kek-Bk-aZa" firstAttribute="centerY" secondItem="Sb1-lf-Ni8" secondAttribute="centerY" id="A1W-x3-5Ni"/>
+                            <constraint firstItem="pmg-VM-JZD" firstAttribute="trailing" secondItem="ZAy-i0-jQz" secondAttribute="trailing" id="Lpb-pR-get"/>
+                            <constraint firstItem="pmg-VM-JZD" firstAttribute="top" secondItem="Sb1-lf-Ni8" secondAttribute="top" id="Nlz-hL-OfJ"/>
+                            <constraint firstItem="pmg-VM-JZD" firstAttribute="bottom" secondItem="Sb1-lf-Ni8" secondAttribute="bottom" id="rFh-UW-996"/>
+                            <constraint firstItem="pmg-VM-JZD" firstAttribute="leading" secondItem="ZAy-i0-jQz" secondAttribute="leading" id="tx6-as-SaC"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ZAy-i0-jQz"/>
                     </view>
                     <connections>
+                        <outlet property="imageView" destination="pmg-VM-JZD" id="ujR-Bu-9JK"/>
                         <outlet property="showButton" destination="Kek-Bk-aZa" id="TMd-M7-fUt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4z8-HZ-8wv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-15" y="74"/>
+            <point key="canvasLocation" x="-15.199999999999999" y="73.313343328335833"/>
         </scene>
     </scenes>
 </document>

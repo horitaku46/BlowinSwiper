@@ -19,10 +19,22 @@ final class DetailViewController: UIViewController {
         return viewController
     }
 
+    var blowinSwiper: BlowinSwiper?
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
         navigationItem.title = "Detail"
         view.backgroundColor = bgColor
+
+        // test
+        if bgColor == UIColor(hex: ColorHex.purple) {
+            blowinSwiper = BlowinSwiper(navigationController: navigationController)
+            navigationController?.delegate = blowinSwiper
+        }
+
+//        let target = navigationController?.value(forKey: "_cachedInteractionController")
+//        let recognizer = UIPanGestureRecognizer(target: target, action: Selector(("handleNavigationTransition:")))
+//        view.addGestureRecognizer(recognizer)
     }
 }

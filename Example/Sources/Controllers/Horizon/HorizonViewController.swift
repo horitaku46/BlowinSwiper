@@ -10,6 +10,14 @@ import UIKit
 
 final class HorizonViewController: UIViewController {
 
+    @IBOutlet weak var imageView: UIImageView! {
+        didSet {
+            imageView.backgroundColor = UIColor(hex: ColorHex.green)
+            imageView.image = UIImage(named: "nao.jpg")
+            imageView.contentMode = .scaleAspectFit
+        }
+    }
+
     @IBOutlet weak var showButton: UIButton! {
         didSet {
             showButton.tintColor = .white
@@ -22,7 +30,6 @@ final class HorizonViewController: UIViewController {
         super.viewDidLoad()
 
         navigationItem.title = "Horizon"
-        view.backgroundColor = UIColor(hex: ColorHex.green)
     }
 
     @IBAction func tapShowButton(_ sender: Any) {

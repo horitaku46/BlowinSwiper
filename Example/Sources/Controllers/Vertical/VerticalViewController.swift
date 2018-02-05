@@ -10,6 +10,14 @@ import UIKit
 
 final class VerticalViewController: UIViewController {
 
+    @IBOutlet weak var imageView: UIImageView! {
+        didSet {
+            imageView.backgroundColor = UIColor(hex: ColorHex.lightBlue)
+            imageView.image = UIImage(named: "nao.jpg")
+            imageView.contentMode = .scaleAspectFit
+        }
+    }
+
     @IBOutlet weak var showButton: UIButton! {
         didSet {
             showButton.tintColor = .white
@@ -22,7 +30,6 @@ final class VerticalViewController: UIViewController {
         super.viewDidLoad()
 
         navigationItem.title = "Vertical"
-        view.backgroundColor = UIColor(hex: ColorHex.lightBlue)
     }
 
     @IBAction func tapShowButton(_ sender: Any) {
