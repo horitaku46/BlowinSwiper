@@ -75,10 +75,10 @@
             </objects>
             <point key="canvasLocation" x="532.79999999999995" y="381.40929535232385"/>
         </scene>
-        <!--HorizonViewController-->
+        <!--HorizontalViewController-->
         <scene sceneID="AgP-dy-M3O">
             <objects>
-                <viewControllerPlaceholder storyboardName="HorizonViewController" id="iz6-ZK-C4p" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="HorizontalViewController" id="iz6-ZK-C4p" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="kCA-eD-6sm"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wXj-T3-xsR" userLabel="First Responder" sceneMemberID="firstResponder"/>

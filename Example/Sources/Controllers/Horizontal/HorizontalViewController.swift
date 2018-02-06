@@ -1,5 +1,5 @@
 //
-//  HorizonViewController.swift
+//  HorizontalViewController.swift
 //  Example
 //
 //  Created by Takuma Horiuchi on 2018/02/03.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class HorizonViewController: UIViewController {
+final class HorizontalViewController: UIViewController {
 
     @IBOutlet weak var imageView: UIImageView! {
         didSet {

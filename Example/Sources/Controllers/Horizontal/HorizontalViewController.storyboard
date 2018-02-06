@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Horizon View Controller-->
+        <!--Horizontal View Controller-->
         <scene sceneID="F3t-nu-BEK">
             <objects>
-                <viewController storyboardIdentifier="HorizonViewController" id="by4-N1-dfk" customClass="HorizonViewController" customModule="Example" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HorizonViewController" id="by4-N1-dfk" customClass="HorizontalViewController" customModule="Example" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Sb1-lf-Ni8">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -47,7 +47,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4z8-HZ-8wv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-15.199999999999999" y="73.313343328335833"/>
+            <point key="canvasLocation" x="-17" y="76"/>
         </scene>
     </scenes>
 </document>
