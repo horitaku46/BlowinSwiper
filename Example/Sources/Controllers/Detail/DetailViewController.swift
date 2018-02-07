@@ -28,19 +28,10 @@ final class DetailViewController: UIViewController {
         label.text = "Detail"
         label.font = .boldSystemFont(ofSize: 17)
         navigationItem.titleView = label
+
         view.backgroundColor = bgColor
 
-        // test
-        if bgColor == UIColor(hex: ColorHex.purple) {
-            blowinSwiper = BlowinSwiper(navigationController: navigationController)
-            navigationController?.delegate = blowinSwiper
-        }
-
-//        let target = navigationController?.value(forKey: "_cachedInteractionController")
-//        let recognizer = UIPanGestureRecognizer(target: target, action: Selector(("handleNavigationTransition:")))
-//        view.addGestureRecognizer(recognizer)
+        blowinSwiper = BlowinSwiper(navigationController: navigationController)
+        navigationController?.delegate = blowinSwiper
     }
 }
-
-//2018-02-07 03:19:39.589496+0900 Example[6948:4143703] <_UISystemGestureGateGestureRecognizer: 0x1c41ca320>: Gesture: Failed to receive system gesture state notification before next touch
-//2018-02-07 03:19:39.589877+0900 Example[6948:4143703] <_UISystemGestureGateGestureRecognizer: 0x1c41ca410>: Touch: Failed to receive system gesture state notification before next touch

@@ -32,13 +32,30 @@ final class HorizontalPopAnimatedTransitioning: NSObject, UIViewControllerAnimat
 
         toViewController.view.frame.origin.x = -toViewWidth * Const.toViewTransitionRatio
 
-        UIView.animate(withDuration: transitionDuration(using: transitionContext),
-                       animations: {
+        let shadowView = makeShadowView(frame: fromViewController.view.frame)
+        containerView.insertSubview(shadowView, belowSubview: fromViewController.view)
+
+        UIView.animate(withDuration: transitionDuration(using: transitionContext), animations: {
             toViewController.view.frame.origin.x = 0
+
+            shadowView.frame.origin.x = toViewWidth
+            shadowView.alpha = 0
+
             fromViewController.view.frame.origin.x = toViewWidth
             fromVCTitleView?.frame.origin.x = toViewWidth * Const.titleViewTransitionRatio
+
         }) { _ in
+            shadowView.removeFromSuperview()
             transitionContext.completeTransition(!transitionContext.transitionWasCancelled)
         }
+    }
+
+    private func makeShadowView(frame: CGRect) -> UIView {
+        let view = UIView(frame: frame)
+        view.layer.backgroundColor = UIColor.black.cgColor
+        view.layer.shadowOffset.width = -3
+        view.layer.shadowOpacity = 0.5
+        view.layer.shadowRadius = 8
+        return view
     }
 }
