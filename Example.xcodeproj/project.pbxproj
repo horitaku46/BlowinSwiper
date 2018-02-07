@@ -22,6 +22,7 @@
 		61D0DD8B2029788C003AB105 /* HorizontalPopAnimatedTransitioning.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61D0DD8A2029788C003AB105 /* HorizontalPopAnimatedTransitioning.swift */; };
 		61D0DD8F20297B2A003AB105 /* HorizontalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61D0DD8D20297B2A003AB105 /* HorizontalViewController.swift */; };
 		61D0DD9020297B2A003AB105 /* HorizontalViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 61D0DD8E20297B2A003AB105 /* HorizontalViewController.storyboard */; };
+		61D0DD93202B2F50003AB105 /* SwipeMenuViewController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61D0DD92202B2F50003AB105 /* SwipeMenuViewController.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		61D0DD8A2029788C003AB105 /* HorizontalPopAnimatedTransitioning.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalPopAnimatedTransitioning.swift; sourceTree = "<group>"; };
 		61D0DD8D20297B2A003AB105 /* HorizontalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HorizontalViewController.swift; sourceTree = "<group>"; };
 		61D0DD8E20297B2A003AB105 /* HorizontalViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = HorizontalViewController.storyboard; sourceTree = "<group>"; };
+		61D0DD92202B2F50003AB105 /* SwipeMenuViewController.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwipeMenuViewController.framework; path = Carthage/Build/iOS/SwipeMenuViewController.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +53,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				61D0DD93202B2F50003AB105 /* SwipeMenuViewController.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +66,7 @@
 				61356F872025B517009C0205 /* Example */,
 				61356F712024A173009C0205 /* BlowinSwiper */,
 				61356F5D2024A111009C0205 /* Products */,
+				61D0DD91202B2F50003AB105 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -170,6 +174,14 @@
 			path = Horizontal;
 			sourceTree = "<group>";
 		};
+		61D0DD91202B2F50003AB105 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				61D0DD92202B2F50003AB105 /* SwipeMenuViewController.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -180,6 +192,7 @@
 				61356F582024A111009C0205 /* Sources */,
 				61356F592024A111009C0205 /* Frameworks */,
 				61356F5A2024A111009C0205 /* Resources */,
+				61D0DD94202B2F64003AB105 /* Carthage copy-frameworks */,
 			);
 			buildRules = (
 			);
@@ -239,6 +252,24 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		61D0DD94202B2F64003AB105 /* Carthage copy-frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/SwipeMenuViewController.framework",
+			);
+			name = "Carthage copy-frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		61356F582024A111009C0205 /* Sources */ = {
@@ -373,6 +404,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4ZJ5LV82G2;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "$(SRCROOT)/Example/Resources/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -389,6 +424,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4ZJ5LV82G2;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "$(SRCROOT)/Example/Resources/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

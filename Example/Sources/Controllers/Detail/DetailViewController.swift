@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwipeMenuViewController
 
 final class DetailViewController: UIViewController {
 
