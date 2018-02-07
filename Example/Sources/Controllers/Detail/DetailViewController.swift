@@ -24,7 +24,10 @@ final class DetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        navigationItem.title = "Detail"
+        let label = UILabel()
+        label.text = "Detail"
+        label.font = .boldSystemFont(ofSize: 17)
+        navigationItem.titleView = label
         view.backgroundColor = bgColor
 
         // test
@@ -38,3 +41,6 @@ final class DetailViewController: UIViewController {
 //        view.addGestureRecognizer(recognizer)
     }
 }
+
+//2018-02-07 03:19:39.589496+0900 Example[6948:4143703] <_UISystemGestureGateGestureRecognizer: 0x1c41ca320>: Gesture: Failed to receive system gesture state notification before next touch
+//2018-02-07 03:19:39.589877+0900 Example[6948:4143703] <_UISystemGestureGateGestureRecognizer: 0x1c41ca410>: Touch: Failed to receive system gesture state notification before next touch

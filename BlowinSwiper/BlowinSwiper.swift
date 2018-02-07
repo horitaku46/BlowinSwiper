@@ -15,11 +15,8 @@ final class BlowinSwiper: NSObject {
     }
 
     private var navigationController: UINavigationController?
-    private var percentDriven = UIPercentDrivenInteractiveTransition() {
-        didSet {
-            percentDriven.completionCurve = .easeOut
-        }
-    }
+    private var percentDriven = UIPercentDrivenInteractiveTransition()
+    private var isInteractivePop = false
 
     init(navigationController: UINavigationController?) {
         super.init()
@@ -39,6 +36,7 @@ final class BlowinSwiper: NSObject {
 
         switch gesture.state {
         case .began:
+            isInteractivePop = true
             navigationController?.popViewController(animated: true)
 
         case .changed:
@@ -46,6 +44,7 @@ final class BlowinSwiper: NSObject {
             percentDriven.update(percent)
 
         case .ended, .cancelled:
+            isInteractivePop = false
             let velocityX = gesture.velocity(in: view).x
             let halfWidth = view.bounds.width / 2
             velocityX > Const.maxSwipeVelocity || translationX > halfWidth ? percentDriven.finish() : percentDriven.cancel()
@@ -80,46 +79,6 @@ extension BlowinSwiper: UINavigationControllerDelegate {
 
     func navigationController(_ navigationController: UINavigationController,
                               interactionControllerFor animationController: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
-        return percentDriven
+        return isInteractivePop ? percentDriven : nil
     }
 }
-
-//extension BlowinSwiper: UIViewControllerAnimatedTransitioning {
-//
-//    func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
-//        return 0.3
-//    }
-//
-//    func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
-//        guard let fromViewController = transitionContext.viewController(forKey: .from),
-//            let toViewController = transitionContext.viewController(forKey: .to) else {
-//            return
-//        }
-//        let containerView = transitionContext.containerView
-//
-//        let fromView = isPop ? toViewController.view : fromViewController.view
-//        let toView   = isPop ? fromViewController.view : toViewController.view
-//        let offSet   = containerView.bounds.width
-//
-//        containerView.insertSubview(toViewController.view, aboveSubview: fromViewController.view)
-//        if isPop {
-//            containerView.insertSubview(toViewController.view, belowSubview: fromViewController.view)
-//        }
-//
-//        toView?.frame = containerView.frame
-//        toView?.transform = isPop ? CGAffineTransform.identity : CGAffineTransform(translationX: offSet, y: 0)
-//        fromView?.frame = containerView.frame
-//        fromView?.transform = isPop ? CGAffineTransform(scaleX: scale, y: scale) : CGAffineTransform.identity
-//
-//        let duration = transitionDuration(using: transitionContext)
-//        UIView.animate(withDuration: duration, animations: {
-//            toView?.transform = self.isPop ? CGAffineTransform(translationX: offSet, y: 0) : CGAffineTransform.identity
-//            fromView?.transform = self.isPop ? CGAffineTransform.identity : CGAffineTransform(scaleX: self.scale, y: self.scale)
-//        }) { _ in
-//            toView?.transform = CGAffineTransform.identity
-//            fromView?.transform = CGAffineTransform.identity
-//            transitionContext.completeTransition(!transitionContext.transitionWasCancelled)
-//        }
-//    }
-//}
-

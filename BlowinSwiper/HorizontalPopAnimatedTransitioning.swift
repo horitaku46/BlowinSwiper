@@ -10,6 +10,10 @@ import UIKit
 
 final class HorizontalPopAnimatedTransitioning: NSObject, UIViewControllerAnimatedTransitioning {
 
+    private struct Const {
+        static let titleViewTransitionRatio: CGFloat = 0.52
+    }
+
     func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
         return 0.3
     }
@@ -20,11 +24,14 @@ final class HorizontalPopAnimatedTransitioning: NSObject, UIViewControllerAnimat
             return
         }
         let containerView = transitionContext.containerView
+        let fromVCTitleView = fromViewController.navigationItem.titleView
 
         containerView.insertSubview(toViewController.view, belowSubview: fromViewController.view)
 
-        UIView.animate(withDuration: transitionDuration(using: transitionContext), animations: {
-            fromViewController.view.transform = CGAffineTransform(translationX: toViewController.view.bounds.width, y: 0)
+        UIView.animate(withDuration: transitionDuration(using: transitionContext),
+                       animations: {
+            fromViewController.view.frame.origin.x = toViewController.view.bounds.width
+            fromVCTitleView?.frame.origin.x = toViewController.view.bounds.width * Const.titleViewTransitionRatio
         }) { _ in
             transitionContext.completeTransition(!transitionContext.transitionWasCancelled)
         }
