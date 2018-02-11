@@ -10,11 +10,18 @@ import UIKit
 
 final class BlowinSwiper: NSObject {
 
+    deinit {
+        guard let panGesture = panGesture else { return }
+        panGesture.removeTarget(self, action: #selector(handlePanGesture(_:)))
+        navigationController?.view.removeGestureRecognizer(panGesture)
+    }
+
     private struct Const {
         static let maxSwipeVelocity: CGFloat = 800
     }
 
     private var navigationController: UINavigationController?
+    private weak var panGesture: UIPanGestureRecognizer?
     private var percentDriven = UIPercentDrivenInteractiveTransition()
     private var isInteractivePop = false
 
@@ -22,9 +29,10 @@ final class BlowinSwiper: NSObject {
         super.init()
         self.navigationController = navigationController
 
-        let gesture = UIPanGestureRecognizer(target: self, action: #selector(handlePanGesture(_:)))
-        gesture.delegate = self
-        self.navigationController?.view.addGestureRecognizer(gesture)
+        let panGesture = UIPanGestureRecognizer(target: self, action: #selector(handlePanGesture(_:)))
+        panGesture.delegate = self 
+        self.navigationController?.view.addGestureRecognizer(panGesture)
+        self.panGesture = panGesture
     }
 
     @objc private func handlePanGesture(_ gesture: UIPanGestureRecognizer) {
@@ -70,7 +78,7 @@ extension BlowinSwiper: UINavigationControllerDelegate {
                               to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         switch operation {
         case .pop:
-            return HorizontalPopAnimatedTransitioning()
+            return PopAnimatedTransitioning()
 
         default:
             return nil

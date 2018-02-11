@@ -1,5 +1,5 @@
 //
-//  HorizontalViewController.swift
+//  NaoViewController.swift
 //  Example
 //
 //  Created by Takuma Horiuchi on 2018/02/03.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class HorizontalViewController: UIViewController {
+final class NaoViewController: UIViewController {
 
     @IBOutlet weak var imageView: UIImageView! {
         didSet {
@@ -29,11 +29,11 @@ final class HorizontalViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        navigationItem.title = "Horizon"
+        navigationItem.title = "Nao"
     }
 
     @IBAction func tapShowButton(_ sender: Any) {
-        let viewController = DetailViewController.make(bgColor: UIColor(hex: ColorHex.purple))
+        let viewController = MenuViewController.make()
         navigationController?.show(viewController, sender: nil)
     }
 }

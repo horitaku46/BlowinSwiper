@@ -10,17 +10,14 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Vertical View Controller-->
+        <!--Menu View Controller-->
         <scene sceneID="13b-xc-A19">
             <objects>
-                <viewController storyboardIdentifier="VerticalViewController" id="fbc-sZ-cVf" customClass="VerticalViewController" customModule="Example" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MenuViewController" id="fbc-sZ-cVf" customClass="MenuViewController" customModule="Example" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dKh-o5-Ezg">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="c8j-yQ-Ega">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EAP-Hi-5nl">
                                 <rect key="frame" x="164" y="318" width="46" height="30"/>
                                 <state key="normal" title="Button"/>
@@ -31,17 +28,12 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="c8j-yQ-Ega" firstAttribute="bottom" secondItem="dKh-o5-Ezg" secondAttribute="bottom" id="3TB-sx-HAT"/>
                             <constraint firstItem="EAP-Hi-5nl" firstAttribute="centerX" secondItem="dKh-o5-Ezg" secondAttribute="centerX" id="WFQ-zZ-iRF"/>
                             <constraint firstItem="EAP-Hi-5nl" firstAttribute="centerY" secondItem="dKh-o5-Ezg" secondAttribute="centerY" id="eV9-LA-nE3"/>
-                            <constraint firstItem="c8j-yQ-Ega" firstAttribute="trailing" secondItem="xDf-eO-Vwj" secondAttribute="trailing" id="pqA-Hj-CK9"/>
-                            <constraint firstItem="c8j-yQ-Ega" firstAttribute="leading" secondItem="xDf-eO-Vwj" secondAttribute="leading" id="vqz-nV-M5u"/>
-                            <constraint firstItem="c8j-yQ-Ega" firstAttribute="top" secondItem="dKh-o5-Ezg" secondAttribute="top" id="yqo-Pv-sBo"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="xDf-eO-Vwj"/>
                     </view>
                     <connections>
-                        <outlet property="imageView" destination="c8j-yQ-Ega" id="nDA-ff-Mtw"/>
                         <outlet property="showButton" destination="EAP-Hi-5nl" id="VpX-we-Ljz"/>
                     </connections>
                 </viewController>

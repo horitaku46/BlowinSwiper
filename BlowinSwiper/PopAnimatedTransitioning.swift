@@ -1,5 +1,5 @@
 //
-//  HorizontalPopAnimatedTransitioning.swift
+//  PopAnimatedTransitioning.swift
 //  Example
 //
 //  Created by Takuma Horiuchi on 2018/02/06.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class HorizontalPopAnimatedTransitioning: NSObject, UIViewControllerAnimatedTransitioning {
+final class PopAnimatedTransitioning: NSObject, UIViewControllerAnimatedTransitioning {
 
     private struct Const {
         static let toViewTransitionRatio: CGFloat = 0.3

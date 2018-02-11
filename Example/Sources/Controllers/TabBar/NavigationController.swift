@@ -9,10 +9,4 @@
 import UIKit
 
 final class NavigationController: UINavigationController {
-
-    var blowinSwiper: BlowinSwiper!
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
 }

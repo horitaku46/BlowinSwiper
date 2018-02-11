@@ -11,8 +11,7 @@ import UIKit
 final class TabBarController: UITabBarController {
 
     private enum Const {
-        static let tabBarTitles = ["Horizon",
-                                   "Vertical"]
+        static let tabBarTitles = ["Nao"]
     }
 
     override func viewDidLoad() {
