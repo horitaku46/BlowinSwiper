@@ -20,6 +20,8 @@ final class BlowinSwiper: NSObject {
         static let maxSwipeVelocity: CGFloat = 800
     }
 
+    var isShouldRecognizeSimultaneously = false
+
     private var navigationController: UINavigationController?
     private weak var panGesture: UIPanGestureRecognizer?
     private var percentDriven = UIPercentDrivenInteractiveTransition()
@@ -67,6 +69,10 @@ extension BlowinSwiper: UIGestureRecognizerDelegate {
 
     func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
         return navigationController?.viewControllers.count ?? 0 > 1
+    }
+
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+        return isShouldRecognizeSimultaneously
     }
 }
 

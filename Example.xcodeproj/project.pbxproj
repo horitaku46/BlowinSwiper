@@ -22,7 +22,12 @@
 		61D0DD8B2029788C003AB105 /* PopAnimatedTransitioning.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61D0DD8A2029788C003AB105 /* PopAnimatedTransitioning.swift */; };
 		61D0DD8F20297B2A003AB105 /* NaoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61D0DD8D20297B2A003AB105 /* NaoViewController.swift */; };
 		61D0DD9020297B2A003AB105 /* NaoViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 61D0DD8E20297B2A003AB105 /* NaoViewController.storyboard */; };
-		61D0DD93202B2F50003AB105 /* SwipeMenuViewController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61D0DD92202B2F50003AB105 /* SwipeMenuViewController.framework */; };
+		61F27EA6203412310024FAF4 /* TabItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61F27E9B203412310024FAF4 /* TabItemView.swift */; };
+		61F27EA7203412310024FAF4 /* SwipeMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61F27E9C203412310024FAF4 /* SwipeMenuViewController.swift */; };
+		61F27EA8203412310024FAF4 /* ContentScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61F27E9D203412310024FAF4 /* ContentScrollView.swift */; };
+		61F27EA9203412310024FAF4 /* SwipeMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61F27E9E203412310024FAF4 /* SwipeMenuView.swift */; };
+		61F27EAA203412310024FAF4 /* TabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61F27E9F203412310024FAF4 /* TabView.swift */; };
+		61F27EAC203412310024FAF4 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61F27EA2203412310024FAF4 /* UIViewExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +51,12 @@
 		61D0DD8D20297B2A003AB105 /* NaoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NaoViewController.swift; sourceTree = "<group>"; };
 		61D0DD8E20297B2A003AB105 /* NaoViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = NaoViewController.storyboard; sourceTree = "<group>"; };
 		61D0DD92202B2F50003AB105 /* SwipeMenuViewController.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwipeMenuViewController.framework; path = Carthage/Build/iOS/SwipeMenuViewController.framework; sourceTree = "<group>"; };
+		61F27E9B203412310024FAF4 /* TabItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabItemView.swift; sourceTree = "<group>"; };
+		61F27E9C203412310024FAF4 /* SwipeMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwipeMenuViewController.swift; sourceTree = "<group>"; };
+		61F27E9D203412310024FAF4 /* ContentScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentScrollView.swift; sourceTree = "<group>"; };
+		61F27E9E203412310024FAF4 /* SwipeMenuView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwipeMenuView.swift; sourceTree = "<group>"; };
+		61F27E9F203412310024FAF4 /* TabView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabView.swift; sourceTree = "<group>"; };
+		61F27EA2203412310024FAF4 /* UIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,7 +64,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				61D0DD93202B2F50003AB105 /* SwipeMenuViewController.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -114,6 +124,7 @@
 				61356F8C2025B517009C0205 /* AppDelegate.swift */,
 				61356F8D2025B517009C0205 /* Controllers */,
 				61D0DD832025B71C003AB105 /* Extensions */,
+				61F27E99203412310024FAF4 /* SwipeMenuViewController */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -182,6 +193,35 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		61F27E99203412310024FAF4 /* SwipeMenuViewController */ = {
+			isa = PBXGroup;
+			children = (
+				61F27E9A203412310024FAF4 /* Sources */,
+			);
+			path = SwipeMenuViewController;
+			sourceTree = "<group>";
+		};
+		61F27E9A203412310024FAF4 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				61F27E9B203412310024FAF4 /* TabItemView.swift */,
+				61F27E9C203412310024FAF4 /* SwipeMenuViewController.swift */,
+				61F27E9D203412310024FAF4 /* ContentScrollView.swift */,
+				61F27E9E203412310024FAF4 /* SwipeMenuView.swift */,
+				61F27E9F203412310024FAF4 /* TabView.swift */,
+				61F27EA0203412310024FAF4 /* Extensions */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		61F27EA0203412310024FAF4 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				61F27EA2203412310024FAF4 /* UIViewExtension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -192,7 +232,6 @@
 				61356F582024A111009C0205 /* Sources */,
 				61356F592024A111009C0205 /* Frameworks */,
 				61356F5A2024A111009C0205 /* Resources */,
-				61D0DD94202B2F64003AB105 /* Carthage copy-frameworks */,
 			);
 			buildRules = (
 			);
@@ -253,24 +292,6 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		61D0DD94202B2F64003AB105 /* Carthage copy-frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"$(SRCROOT)/Carthage/Build/iOS/SwipeMenuViewController.framework",
-			);
-			name = "Carthage copy-frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "/usr/local/bin/carthage copy-frameworks";
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
 		61356F582024A111009C0205 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -279,12 +300,18 @@
 				61356F9E2025B517009C0205 /* TabBarController.swift in Sources */,
 				61D0DD8B2029788C003AB105 /* PopAnimatedTransitioning.swift in Sources */,
 				61D0DD872027395E003AB105 /* NavigationController.swift in Sources */,
+				61F27EA6203412310024FAF4 /* TabItemView.swift in Sources */,
+				61F27EAA203412310024FAF4 /* TabView.swift in Sources */,
+				61F27EAC203412310024FAF4 /* UIViewExtension.swift in Sources */,
 				61D0DD852025B744003AB105 /* UIColorExtension.swift in Sources */,
+				61F27EA7203412310024FAF4 /* SwipeMenuViewController.swift in Sources */,
 				61356F9C2025B517009C0205 /* AppDelegate.swift in Sources */,
 				61356FA42025B517009C0205 /* MenuViewController.swift in Sources */,
 				61D0DD8F20297B2A003AB105 /* NaoViewController.swift in Sources */,
 				61356FA12025B517009C0205 /* WebViewController.swift in Sources */,
+				61F27EA9203412310024FAF4 /* SwipeMenuView.swift in Sources */,
 				61356F752024A173009C0205 /* BlowinSwiper.swift in Sources */,
+				61F27EA8203412310024FAF4 /* ContentScrollView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

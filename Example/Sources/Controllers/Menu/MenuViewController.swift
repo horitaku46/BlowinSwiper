@@ -7,17 +7,9 @@
 //
 
 import UIKit
-import SwipeMenuViewController
 
-final class MenuViewController: UIViewController {
+final class MenuViewController: SwipeMenuViewController {
 
-    @IBOutlet weak var showButton: UIButton! {
-        didSet {
-            showButton.tintColor = .black
-            showButton.showsTouchWhenHighlighted = true
-            showButton.setTitle("Show", for: .normal)
-        }
-    }
 
     class func make() -> UIViewController {
         let viewController = UIStoryboard(name: "MenuViewController", bundle: nil)
@@ -25,7 +17,13 @@ final class MenuViewController: UIViewController {
         return viewController
     }
 
+    private let viewColor = [UIColor(hex: ColorHex.green),
+                             UIColor(hex: ColorHex.purple),
+                             UIColor(hex: ColorHex.lightBlue),
+                             UIColor(hex: ColorHex.lightYellow)]
+
     private var blowinSwiper: BlowinSwiper?
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,6 +32,13 @@ final class MenuViewController: UIViewController {
         menuLabel.text = "Menu"
         menuLabel.font = UIFont.boldSystemFont(ofSize: 17)
         navigationItem.titleView = menuLabel
+
+        var options = SwipeMenuViewOptions()
+        options.tabView.style = .segmented
+        options.tabView.underlineView.backgroundColor = .black
+        options.tabView.itemView.textColor = .gray
+        options.tabView.itemView.selectedTextColor = .black
+        swipeMenuView.reloadData(options: options)
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -41,10 +46,32 @@ final class MenuViewController: UIViewController {
 
         blowinSwiper = BlowinSwiper(navigationController: navigationController)
         navigationController?.delegate = blowinSwiper
+        blowinSwiper?.isShouldRecognizeSimultaneously = true
     }
 
-    @IBAction func tapShowButton(_ sender: Any) {
-        let viewController = WebViewController.make()
-        navigationController?.show(viewController, sender: nil)
+    // MARK: - SwipeMenuViewDelegate
+
+    override func swipeMenuViewDidScroll(_ contentScrollView: UIScrollView) {
+        if floor(contentScrollView.contentOffset.x) == 0 {
+            blowinSwiper?.isShouldRecognizeSimultaneously = true
+        } else {
+            blowinSwiper?.isShouldRecognizeSimultaneously = false
+        }
+    }
+
+    // MARK: - SwipeMenuViewDataSource
+
+    override func numberOfPages(in swipeMenuView: SwipeMenuView) -> Int {
+        return viewColor.count
+    }
+
+    override func swipeMenuView(_ swipeMenuView: SwipeMenuView, titleForPageAt index: Int) -> String {
+        return String(index + 1)
+    }
+
+    override func swipeMenuView(_ swipeMenuView: SwipeMenuView, viewControllerForPageAt index: Int) -> UIViewController {
+        let viewController = UIViewController()
+        viewController.view.backgroundColor = viewColor[index]
+        return viewController
     }
 }

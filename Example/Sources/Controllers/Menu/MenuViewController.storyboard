@@ -17,29 +17,13 @@
                     <view key="view" contentMode="scaleToFill" id="dKh-o5-Ezg">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EAP-Hi-5nl">
-                                <rect key="frame" x="164" y="318" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <action selector="tapShowButton:" destination="fbc-sZ-cVf" eventType="touchUpInside" id="qL6-er-K0E"/>
-                                </connections>
-                            </button>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="EAP-Hi-5nl" firstAttribute="centerX" secondItem="dKh-o5-Ezg" secondAttribute="centerX" id="WFQ-zZ-iRF"/>
-                            <constraint firstItem="EAP-Hi-5nl" firstAttribute="centerY" secondItem="dKh-o5-Ezg" secondAttribute="centerY" id="eV9-LA-nE3"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="xDf-eO-Vwj"/>
                     </view>
-                    <connections>
-                        <outlet property="showButton" destination="EAP-Hi-5nl" id="VpX-we-Ljz"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rbP-E3-raN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="32.799999999999997" y="108.39580209895054"/>
+            <point key="canvasLocation" x="-1" y="107"/>
         </scene>
     </scenes>
 </document>
