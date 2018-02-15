@@ -15,6 +15,13 @@ final class PopAnimatedTransitioning: NSObject, UIViewControllerAnimatedTransiti
         static let titleViewTransitionRatio: CGFloat = 0.52
     }
 
+    private var isInteractivePop = false
+
+    init(isInteractivePop: Bool) {
+        super.init()
+        self.isInteractivePop = isInteractivePop
+    }
+
     func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
         return 0.3
     }
@@ -35,7 +42,10 @@ final class PopAnimatedTransitioning: NSObject, UIViewControllerAnimatedTransiti
         let shadowView = makeShadowView(frame: fromViewController.view.frame)
         containerView.insertSubview(shadowView, belowSubview: fromViewController.view)
 
-        UIView.animate(withDuration: transitionDuration(using: transitionContext), animations: {
+        UIView.animate(withDuration: transitionDuration(using: transitionContext),
+                       delay: 0,
+                       options: isInteractivePop ? .curveLinear : .curveEaseOut,
+                       animations: {
             toViewController.view.frame.origin.x = 0
 
             shadowView.frame.origin.x = toViewWidth
@@ -43,7 +53,6 @@ final class PopAnimatedTransitioning: NSObject, UIViewControllerAnimatedTransiti
 
             fromViewController.view.frame.origin.x = toViewWidth
             fromVCTitleView?.frame.origin.x = toViewWidth * Const.titleViewTransitionRatio
-
         }) { _ in
             shadowView.removeFromSuperview()
             transitionContext.completeTransition(!transitionContext.transitionWasCancelled)

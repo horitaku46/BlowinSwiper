@@ -24,7 +24,6 @@ final class MenuViewController: SwipeMenuViewController {
 
     private var blowinSwiper: BlowinSwiper?
 
-
     override func viewDidLoad() {
         super.viewDidLoad()
 

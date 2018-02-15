@@ -84,7 +84,7 @@ extension BlowinSwiper: UINavigationControllerDelegate {
                               to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         switch operation {
         case .pop:
-            return PopAnimatedTransitioning()
+            return PopAnimatedTransitioning(isInteractivePop: isInteractivePop)
 
         default:
             return nil
