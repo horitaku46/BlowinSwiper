@@ -8,13 +8,25 @@
 
 import UIKit
 
-final class MenuViewController: SwipeMenuViewController {
-
+final class MenuViewController: UIViewController {
 
     class func make() -> UIViewController {
         let viewController = UIStoryboard(name: "MenuViewController", bundle: nil)
             .instantiateViewController(withIdentifier: "MenuViewController") as! MenuViewController
         return viewController
+    }
+
+    @IBOutlet weak var swipeMenuView: SwipeMenuView! {
+        didSet {
+            var options = SwipeMenuViewOptions()
+            options.tabView.style                         = .segmented
+            options.tabView.underlineView.backgroundColor = .black
+            options.tabView.itemView.textColor            = .gray
+            options.tabView.itemView.selectedTextColor    = .black
+            swipeMenuView.delegate = self
+            swipeMenuView.dataSource = self
+            swipeMenuView.reloadData(options: options)
+        }
     }
 
     private let viewColor = [UIColor(hex: ColorHex.green),
@@ -31,13 +43,6 @@ final class MenuViewController: SwipeMenuViewController {
         menuLabel.text = "Menu"
         menuLabel.font = UIFont.boldSystemFont(ofSize: 17)
         navigationItem.titleView = menuLabel
-
-        var options = SwipeMenuViewOptions()
-        options.tabView.style = .segmented
-        options.tabView.underlineView.backgroundColor = .black
-        options.tabView.itemView.textColor = .gray
-        options.tabView.itemView.selectedTextColor = .black
-        swipeMenuView.reloadData(options: options)
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -53,32 +58,41 @@ final class MenuViewController: SwipeMenuViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
 
-        swipeMenuView.contentScrollView?.isScrollEnabled = false
+        if swipeMenuView.contentScrollView?.contentOffset.x == 0 {
+            swipeMenuView.contentScrollView?.isScrollEnabled = false
+        }
     }
 
-    // MARK: - SwipeMenuViewDelegate
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransition(to: size, with: coordinator)
 
-    override func swipeMenuViewDidScroll(_ contentScrollView: UIScrollView) {
+        swipeMenuView.willChangeOrientation()
+    }
+}
+
+extension MenuViewController: SwipeMenuViewDelegate {
+
+    func swipeMenuViewDidScroll(_ contentScrollView: UIScrollView) {
         if floor(contentScrollView.contentOffset.x) == 0 {
             blowinSwiper?.isShouldRecognizeSimultaneously = true
         } else {
             blowinSwiper?.isShouldRecognizeSimultaneously = false
         }
     }
+}
 
-    // MARK: - SwipeMenuViewDataSource
+extension MenuViewController: SwipeMenuViewDataSource {
 
-    override func numberOfPages(in swipeMenuView: SwipeMenuView) -> Int {
+    func numberOfPages(in swipeMenuView: SwipeMenuView) -> Int {
         return viewColor.count
     }
 
-    override func swipeMenuView(_ swipeMenuView: SwipeMenuView, titleForPageAt index: Int) -> String {
+    func swipeMenuView(_ swipeMenuView: SwipeMenuView, titleForPageAt index: Int) -> String {
         return String(index + 1)
     }
 
-    override func swipeMenuView(_ swipeMenuView: SwipeMenuView, viewControllerForPageAt index: Int) -> UIViewController {
-        let viewController = UIViewController()
-        viewController.view.backgroundColor = viewColor[index]
+    func swipeMenuView(_ swipeMenuView: SwipeMenuView, viewControllerForPageAt index: Int) -> UIViewController {
+        let viewController = TanukiViewController.make(backgroundColor: viewColor[index])
         return viewController
     }
 }

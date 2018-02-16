@@ -28,6 +28,9 @@
 		61F27EA9203412310024FAF4 /* SwipeMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61F27E9E203412310024FAF4 /* SwipeMenuView.swift */; };
 		61F27EAA203412310024FAF4 /* TabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61F27E9F203412310024FAF4 /* TabView.swift */; };
 		61F27EAC203412310024FAF4 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61F27EA2203412310024FAF4 /* UIViewExtension.swift */; };
+		61F27EB2203680F20024FAF4 /* TanukiViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 61F27EB1203680F20024FAF4 /* TanukiViewController.storyboard */; };
+		61F27EB4203681030024FAF4 /* TanukiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61F27EB3203681030024FAF4 /* TanukiViewController.swift */; };
+		61F27EB62036A7A60024FAF4 /* tanuki.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 61F27EB52036A7A60024FAF4 /* tanuki.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +59,9 @@
 		61F27E9E203412310024FAF4 /* SwipeMenuView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwipeMenuView.swift; sourceTree = "<group>"; };
 		61F27E9F203412310024FAF4 /* TabView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabView.swift; sourceTree = "<group>"; };
 		61F27EA2203412310024FAF4 /* UIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
+		61F27EB1203680F20024FAF4 /* TanukiViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TanukiViewController.storyboard; sourceTree = "<group>"; };
+		61F27EB3203681030024FAF4 /* TanukiViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TanukiViewController.swift; sourceTree = "<group>"; };
+		61F27EB52036A7A60024FAF4 /* tanuki.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = tanuki.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +118,7 @@
 				61356F892025B517009C0205 /* Assets.xcassets */,
 				61356F8A2025B517009C0205 /* Info.plist */,
 				61D0DD882028A628003AB105 /* nao.jpg */,
+				61F27EB52036A7A60024FAF4 /* tanuki.jpg */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -133,6 +140,7 @@
 				61356F8E2025B517009C0205 /* TabBar */,
 				61D0DD8C20297B2A003AB105 /* Nao */,
 				61356F972025B517009C0205 /* Menu */,
+				61F27EB0203680DC0024FAF4 /* Tanuki */,
 				61356F942025B517009C0205 /* Web */,
 			);
 			path = Controllers;
@@ -212,6 +220,15 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		61F27EB0203680DC0024FAF4 /* Tanuki */ = {
+			isa = PBXGroup;
+			children = (
+				61F27EB1203680F20024FAF4 /* TanukiViewController.storyboard */,
+				61F27EB3203681030024FAF4 /* TanukiViewController.swift */,
+			);
+			path = Tanuki;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -273,8 +290,10 @@
 			files = (
 				61D0DD892028A628003AB105 /* nao.jpg in Resources */,
 				61356F9A2025B517009C0205 /* Assets.xcassets in Resources */,
+				61F27EB2203680F20024FAF4 /* TanukiViewController.storyboard in Resources */,
 				61D0DD9020297B2A003AB105 /* NaoViewController.storyboard in Resources */,
 				61356F9D2025B517009C0205 /* TabBarController.storyboard in Resources */,
+				61F27EB62036A7A60024FAF4 /* tanuki.jpg in Resources */,
 				61356FA32025B517009C0205 /* MenuViewController.storyboard in Resources */,
 				61356FA22025B517009C0205 /* WebViewController.storyboard in Resources */,
 			);
@@ -287,6 +306,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				61F27EB4203681030024FAF4 /* TanukiViewController.swift in Sources */,
 				61356F9E2025B517009C0205 /* TabBarController.swift in Sources */,
 				61D0DD8B2029788C003AB105 /* PopAnimatedTransitioning.swift in Sources */,
 				61D0DD872027395E003AB105 /* NavigationController.swift in Sources */,

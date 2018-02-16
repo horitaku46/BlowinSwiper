@@ -12,7 +12,6 @@ final class NaoViewController: UIViewController {
 
     @IBOutlet weak var imageView: UIImageView! {
         didSet {
-            imageView.backgroundColor = UIColor(hex: ColorHex.green)
             imageView.image = UIImage(named: "nao.jpg")
             imageView.contentMode = .scaleAspectFit
         }
@@ -30,6 +29,7 @@ final class NaoViewController: UIViewController {
         super.viewDidLoad()
 
         navigationItem.title = "Nao"
+        view.backgroundColor = UIColor(hex: ColorHex.green)
     }
 
     @IBAction func tapShowButton(_ sender: Any) {
