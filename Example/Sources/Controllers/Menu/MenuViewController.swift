@@ -43,9 +43,17 @@ final class MenuViewController: SwipeMenuViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
 
+        swipeMenuView.contentScrollView?.isScrollEnabled = true
+
         blowinSwiper = BlowinSwiper(navigationController: navigationController)
         navigationController?.delegate = blowinSwiper
         blowinSwiper?.isShouldRecognizeSimultaneously = true
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+
+        swipeMenuView.contentScrollView?.isScrollEnabled = false
     }
 
     // MARK: - SwipeMenuViewDelegate

@@ -50,7 +50,6 @@
 		61D0DD8A2029788C003AB105 /* PopAnimatedTransitioning.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopAnimatedTransitioning.swift; sourceTree = "<group>"; };
 		61D0DD8D20297B2A003AB105 /* NaoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NaoViewController.swift; sourceTree = "<group>"; };
 		61D0DD8E20297B2A003AB105 /* NaoViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = NaoViewController.storyboard; sourceTree = "<group>"; };
-		61D0DD92202B2F50003AB105 /* SwipeMenuViewController.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwipeMenuViewController.framework; path = Carthage/Build/iOS/SwipeMenuViewController.framework; sourceTree = "<group>"; };
 		61F27E9B203412310024FAF4 /* TabItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabItemView.swift; sourceTree = "<group>"; };
 		61F27E9C203412310024FAF4 /* SwipeMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwipeMenuViewController.swift; sourceTree = "<group>"; };
 		61F27E9D203412310024FAF4 /* ContentScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentScrollView.swift; sourceTree = "<group>"; };
@@ -76,7 +75,6 @@
 				61356F872025B517009C0205 /* Example */,
 				61356F712024A173009C0205 /* BlowinSwiper */,
 				61356F5D2024A111009C0205 /* Products */,
-				61D0DD91202B2F50003AB105 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -183,14 +181,6 @@
 				61D0DD8D20297B2A003AB105 /* NaoViewController.swift */,
 			);
 			path = Nao;
-			sourceTree = "<group>";
-		};
-		61D0DD91202B2F50003AB105 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				61D0DD92202B2F50003AB105 /* SwipeMenuViewController.framework */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		61F27E99203412310024FAF4 /* SwipeMenuViewController */ = {
