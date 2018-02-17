@@ -72,6 +72,10 @@ final class MenuViewController: UIViewController {
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
 
+        // Bug: iOS 11.2
+        // https://stackoverflow.com/questions/47754472/ios-uinavigationbar-button-remains-faded-after-segue-back
+        navigationController?.navigationBar.tintAdjustmentMode = .normal
+
         blowinSwiper?.isShouldRecognizeSimultaneously = false
     }
 
