@@ -43,11 +43,15 @@ final class BlowinSwiper: NSObject {
         }
 
         let translationX = gesture.translation(in: view).x
+        let velocityX = gesture.velocity(in: view).x
 
         switch gesture.state {
         case .began:
-            isInteractivePop = true
-            navigationController?.popViewController(animated: true)
+            // only right swipe
+            if velocityX > 0 {
+                isInteractivePop = true
+                navigationController?.popViewController(animated: true)
+            }
 
         case .changed:
             let percent = translationX > 0 ? translationX / view.bounds.width : 0
@@ -55,7 +59,6 @@ final class BlowinSwiper: NSObject {
 
         case .ended, .cancelled:
             isInteractivePop = false
-            let velocityX = gesture.velocity(in: view).x
             let halfWidth = view.bounds.width / 2
             velocityX > Const.maxSwipeVelocity || translationX > halfWidth ? percentDriven.finish() : percentDriven.cancel()
 

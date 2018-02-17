@@ -43,30 +43,47 @@ final class MenuViewController: UIViewController {
         menuLabel.text = "Menu"
         menuLabel.font = UIFont.boldSystemFont(ofSize: 17)
         navigationItem.titleView = menuLabel
+
+        let rightShowBarButtonItem = UIBarButtonItem(title: "Show",
+                                                     style: .plain,
+                                                     target: self,
+                                                     action: #selector(tapRightShowBarButtonItem))
+        navigationItem.setRightBarButton(rightShowBarButtonItem, animated: true)
     }
 
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
 
         swipeMenuView.contentScrollView?.isScrollEnabled = true
 
         blowinSwiper = BlowinSwiper(navigationController: navigationController)
         navigationController?.delegate = blowinSwiper
-        blowinSwiper?.isShouldRecognizeSimultaneously = true
+        if swipeMenuView.contentScrollView?.contentOffset.x == 0 {
+            blowinSwiper?.isShouldRecognizeSimultaneously = true
+        }
     }
 
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
 
-        if swipeMenuView.contentScrollView?.contentOffset.x == 0 {
-            swipeMenuView.contentScrollView?.isScrollEnabled = false
-        }
+        swipeMenuView.contentScrollView?.isScrollEnabled = false
+    }
+
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+
+        blowinSwiper?.isShouldRecognizeSimultaneously = false
     }
 
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         super.viewWillTransition(to: size, with: coordinator)
 
         swipeMenuView.willChangeOrientation()
+    }
+
+    @objc private func tapRightShowBarButtonItem() {
+        let viewController = WebViewController.make()
+        navigationController?.show(viewController, sender: nil)
     }
 }
 
@@ -92,7 +109,7 @@ extension MenuViewController: SwipeMenuViewDataSource {
     }
 
     func swipeMenuView(_ swipeMenuView: SwipeMenuView, viewControllerForPageAt index: Int) -> UIViewController {
-        let viewController = TanukiViewController.make(backgroundColor: viewColor[index])
+        let viewController = TanukiViewController.make(self, backgroundColor: viewColor[index])
         return viewController
     }
 }

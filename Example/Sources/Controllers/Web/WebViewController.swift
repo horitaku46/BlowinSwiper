@@ -18,8 +18,8 @@ final class WebViewController: UIViewController {
 
     private var blowinSwiper: BlowinSwiper?
 
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
 
         blowinSwiper = BlowinSwiper(navigationController: navigationController)
         navigationController?.delegate = blowinSwiper

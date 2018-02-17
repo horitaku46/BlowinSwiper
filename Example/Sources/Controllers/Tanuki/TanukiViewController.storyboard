@@ -21,19 +21,10 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="k9K-sG-zRl">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xfL-TY-kik">
-                                <rect key="frame" x="164" y="318" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <action selector="tapShowButton:" destination="YsK-8l-rQ7" eventType="touchUpInside" id="G0j-oR-beO"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="xfL-TY-kik" firstAttribute="centerX" secondItem="GeD-Rg-V44" secondAttribute="centerX" id="Bpg-Jk-eTK"/>
                             <constraint firstItem="k9K-sG-zRl" firstAttribute="trailing" secondItem="VRb-gb-KXf" secondAttribute="trailing" id="CAa-Ge-HgV"/>
-                            <constraint firstItem="xfL-TY-kik" firstAttribute="centerY" secondItem="GeD-Rg-V44" secondAttribute="centerY" id="Uy1-Va-7ft"/>
                             <constraint firstItem="k9K-sG-zRl" firstAttribute="leading" secondItem="VRb-gb-KXf" secondAttribute="leading" id="cf7-9e-mOA"/>
                             <constraint firstItem="k9K-sG-zRl" firstAttribute="top" secondItem="GeD-Rg-V44" secondAttribute="top" id="mR0-nW-UNo"/>
                             <constraint firstItem="k9K-sG-zRl" firstAttribute="bottom" secondItem="VRb-gb-KXf" secondAttribute="bottom" id="zVX-LC-Y6x"/>
@@ -42,12 +33,11 @@
                     </view>
                     <connections>
                         <outlet property="imageView" destination="k9K-sG-zRl" id="QHy-FY-P9c"/>
-                        <outlet property="showButton" destination="xfL-TY-kik" id="yjq-Dq-oGh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fBN-n7-4wG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-119.2" y="98.50074962518741"/>
+            <point key="canvasLocation" x="-348" y="106"/>
         </scene>
     </scenes>
 </document>

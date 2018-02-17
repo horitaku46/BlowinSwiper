@@ -10,10 +10,13 @@ import UIKit
 
 final class TanukiViewController: UIViewController {
 
-    class func make(backgroundColor: UIColor) -> UIViewController {
+    private var menuViewController: MenuViewController!
+    private var backgroundColor: UIColor = .white
+
+    class func make(_ target: UIViewController, backgroundColor: UIColor) -> UIViewController {
         let viewController = UIStoryboard(name: "TanukiViewController", bundle: nil)
             .instantiateViewController(withIdentifier: "TanukiViewController") as! TanukiViewController
-        viewController.view.backgroundColor = backgroundColor
+        viewController.backgroundColor = backgroundColor
         return viewController
     }
 
@@ -23,15 +26,10 @@ final class TanukiViewController: UIViewController {
             imageView.contentMode = .scaleAspectFit
         }
     }
-    
-    @IBOutlet weak var showButton: UIButton! {
-        didSet {
-            showButton.tintColor = .white
-            showButton.showsTouchWhenHighlighted = true
-            showButton.setTitle("Show", for: .normal)
-        }
-    }
 
-    @IBAction func tapShowButton(_ sender: Any) {
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        view.backgroundColor = backgroundColor
     }
 }
