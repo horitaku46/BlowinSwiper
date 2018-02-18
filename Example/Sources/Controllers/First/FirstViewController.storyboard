@@ -4,23 +4,19 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Nao View Controller-->
+        <!--First View Controller-->
         <scene sceneID="F3t-nu-BEK">
             <objects>
-                <viewController storyboardIdentifier="NaoViewController" id="by4-N1-dfk" customClass="NaoViewController" customModule="Example" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FirstViewController" id="by4-N1-dfk" customClass="FirstViewController" customModule="Example" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Sb1-lf-Ni8">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pmg-VM-JZD">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kek-Bk-aZa">
                                 <rect key="frame" x="164" y="318" width="46" height="30"/>
                                 <state key="normal" title="Button"/>
@@ -33,15 +29,10 @@
                         <constraints>
                             <constraint firstItem="Kek-Bk-aZa" firstAttribute="centerX" secondItem="Sb1-lf-Ni8" secondAttribute="centerX" id="30c-cm-oKv"/>
                             <constraint firstItem="Kek-Bk-aZa" firstAttribute="centerY" secondItem="Sb1-lf-Ni8" secondAttribute="centerY" id="A1W-x3-5Ni"/>
-                            <constraint firstItem="pmg-VM-JZD" firstAttribute="trailing" secondItem="ZAy-i0-jQz" secondAttribute="trailing" id="Lpb-pR-get"/>
-                            <constraint firstItem="pmg-VM-JZD" firstAttribute="top" secondItem="Sb1-lf-Ni8" secondAttribute="top" id="Nlz-hL-OfJ"/>
-                            <constraint firstItem="pmg-VM-JZD" firstAttribute="bottom" secondItem="Sb1-lf-Ni8" secondAttribute="bottom" id="rFh-UW-996"/>
-                            <constraint firstItem="pmg-VM-JZD" firstAttribute="leading" secondItem="ZAy-i0-jQz" secondAttribute="leading" id="tx6-as-SaC"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ZAy-i0-jQz"/>
                     </view>
                     <connections>
-                        <outlet property="imageView" destination="pmg-VM-JZD" id="ujR-Bu-9JK"/>
                         <outlet property="showButton" destination="Kek-Bk-aZa" id="TMd-M7-fUt"/>
                     </connections>
                 </viewController>

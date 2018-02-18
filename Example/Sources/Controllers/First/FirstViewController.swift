@@ -1,5 +1,5 @@
 //
-//  NaoViewController.swift
+//  FirstViewController.swift
 //  Example
 //
 //  Created by Takuma Horiuchi on 2018/02/03.
@@ -8,14 +8,7 @@
 
 import UIKit
 
-final class NaoViewController: UIViewController {
-
-    @IBOutlet weak var imageView: UIImageView! {
-        didSet {
-            imageView.image = UIImage(named: "nao.jpg")
-            imageView.contentMode = .scaleAspectFit
-        }
-    }
+final class FirstViewController: UIViewController {
 
     @IBOutlet weak var showButton: UIButton! {
         didSet {
@@ -28,7 +21,7 @@ final class NaoViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        navigationItem.title = "Nao"
+        navigationItem.title = "First"
         view.backgroundColor = UIColor(hex: ColorHex.green)
     }
 

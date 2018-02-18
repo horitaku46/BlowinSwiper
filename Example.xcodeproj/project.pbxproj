@@ -12,24 +12,23 @@
 		61356F9C2025B517009C0205 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61356F8C2025B517009C0205 /* AppDelegate.swift */; };
 		61356F9D2025B517009C0205 /* TabBarController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 61356F8F2025B517009C0205 /* TabBarController.storyboard */; };
 		61356F9E2025B517009C0205 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61356F902025B517009C0205 /* TabBarController.swift */; };
-		61356FA12025B517009C0205 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61356F952025B517009C0205 /* WebViewController.swift */; };
-		61356FA22025B517009C0205 /* WebViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 61356F962025B517009C0205 /* WebViewController.storyboard */; };
 		61356FA32025B517009C0205 /* MenuViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 61356F982025B517009C0205 /* MenuViewController.storyboard */; };
 		61356FA42025B517009C0205 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61356F992025B517009C0205 /* MenuViewController.swift */; };
+		61BA6C242039C1E800FDECCB /* ColorViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 61BA6C1C2039C1E800FDECCB /* ColorViewController.storyboard */; };
+		61BA6C252039C1E800FDECCB /* ColorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61BA6C1D2039C1E800FDECCB /* ColorViewController.swift */; };
+		61BA6C262039C1E800FDECCB /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61BA6C1F2039C1E800FDECCB /* FirstViewController.swift */; };
+		61BA6C272039C1E800FDECCB /* FirstViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 61BA6C202039C1E800FDECCB /* FirstViewController.storyboard */; };
+		61BA6C282039C1E800FDECCB /* SecondViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 61BA6C222039C1E800FDECCB /* SecondViewController.storyboard */; };
+		61BA6C292039C1E800FDECCB /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61BA6C232039C1E800FDECCB /* SecondViewController.swift */; };
 		61D0DD852025B744003AB105 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61D0DD842025B744003AB105 /* UIColorExtension.swift */; };
-		61D0DD872027395E003AB105 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61D0DD862027395E003AB105 /* NavigationController.swift */; };
 		61D0DD892028A628003AB105 /* nao.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 61D0DD882028A628003AB105 /* nao.jpg */; };
 		61D0DD8B2029788C003AB105 /* PopAnimatedTransitioning.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61D0DD8A2029788C003AB105 /* PopAnimatedTransitioning.swift */; };
-		61D0DD8F20297B2A003AB105 /* NaoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61D0DD8D20297B2A003AB105 /* NaoViewController.swift */; };
-		61D0DD9020297B2A003AB105 /* NaoViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 61D0DD8E20297B2A003AB105 /* NaoViewController.storyboard */; };
 		61F27EA6203412310024FAF4 /* TabItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61F27E9B203412310024FAF4 /* TabItemView.swift */; };
 		61F27EA7203412310024FAF4 /* SwipeMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61F27E9C203412310024FAF4 /* SwipeMenuViewController.swift */; };
 		61F27EA8203412310024FAF4 /* ContentScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61F27E9D203412310024FAF4 /* ContentScrollView.swift */; };
 		61F27EA9203412310024FAF4 /* SwipeMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61F27E9E203412310024FAF4 /* SwipeMenuView.swift */; };
 		61F27EAA203412310024FAF4 /* TabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61F27E9F203412310024FAF4 /* TabView.swift */; };
 		61F27EAC203412310024FAF4 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61F27EA2203412310024FAF4 /* UIViewExtension.swift */; };
-		61F27EB2203680F20024FAF4 /* TanukiViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 61F27EB1203680F20024FAF4 /* TanukiViewController.storyboard */; };
-		61F27EB4203681030024FAF4 /* TanukiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61F27EB3203681030024FAF4 /* TanukiViewController.swift */; };
 		61F27EB62036A7A60024FAF4 /* tanuki.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 61F27EB52036A7A60024FAF4 /* tanuki.jpg */; };
 /* End PBXBuildFile section */
 
@@ -43,24 +42,23 @@
 		61356F8C2025B517009C0205 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		61356F8F2025B517009C0205 /* TabBarController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TabBarController.storyboard; sourceTree = "<group>"; };
 		61356F902025B517009C0205 /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
-		61356F952025B517009C0205 /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
-		61356F962025B517009C0205 /* WebViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = WebViewController.storyboard; sourceTree = "<group>"; };
 		61356F982025B517009C0205 /* MenuViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MenuViewController.storyboard; sourceTree = "<group>"; };
 		61356F992025B517009C0205 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		61BA6C1C2039C1E800FDECCB /* ColorViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ColorViewController.storyboard; sourceTree = "<group>"; };
+		61BA6C1D2039C1E800FDECCB /* ColorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorViewController.swift; sourceTree = "<group>"; };
+		61BA6C1F2039C1E800FDECCB /* FirstViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
+		61BA6C202039C1E800FDECCB /* FirstViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = FirstViewController.storyboard; sourceTree = "<group>"; };
+		61BA6C222039C1E800FDECCB /* SecondViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SecondViewController.storyboard; sourceTree = "<group>"; };
+		61BA6C232039C1E800FDECCB /* SecondViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		61D0DD842025B744003AB105 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
-		61D0DD862027395E003AB105 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		61D0DD882028A628003AB105 /* nao.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = nao.jpg; sourceTree = "<group>"; };
 		61D0DD8A2029788C003AB105 /* PopAnimatedTransitioning.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopAnimatedTransitioning.swift; sourceTree = "<group>"; };
-		61D0DD8D20297B2A003AB105 /* NaoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NaoViewController.swift; sourceTree = "<group>"; };
-		61D0DD8E20297B2A003AB105 /* NaoViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = NaoViewController.storyboard; sourceTree = "<group>"; };
 		61F27E9B203412310024FAF4 /* TabItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabItemView.swift; sourceTree = "<group>"; };
 		61F27E9C203412310024FAF4 /* SwipeMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwipeMenuViewController.swift; sourceTree = "<group>"; };
 		61F27E9D203412310024FAF4 /* ContentScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentScrollView.swift; sourceTree = "<group>"; };
 		61F27E9E203412310024FAF4 /* SwipeMenuView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwipeMenuView.swift; sourceTree = "<group>"; };
 		61F27E9F203412310024FAF4 /* TabView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabView.swift; sourceTree = "<group>"; };
 		61F27EA2203412310024FAF4 /* UIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
-		61F27EB1203680F20024FAF4 /* TanukiViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TanukiViewController.storyboard; sourceTree = "<group>"; };
-		61F27EB3203681030024FAF4 /* TanukiViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TanukiViewController.swift; sourceTree = "<group>"; };
 		61F27EB52036A7A60024FAF4 /* tanuki.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = tanuki.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -137,11 +135,11 @@
 		61356F8D2025B517009C0205 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				61356F8E2025B517009C0205 /* TabBar */,
-				61D0DD8C20297B2A003AB105 /* Nao */,
+				61BA6C1E2039C1E800FDECCB /* First */,
 				61356F972025B517009C0205 /* Menu */,
-				61F27EB0203680DC0024FAF4 /* Tanuki */,
-				61356F942025B517009C0205 /* Web */,
+				61BA6C1B2039C1E800FDECCB /* Color */,
+				61BA6C212039C1E800FDECCB /* Second */,
+				61356F8E2025B517009C0205 /* TabBar */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -151,18 +149,8 @@
 			children = (
 				61356F8F2025B517009C0205 /* TabBarController.storyboard */,
 				61356F902025B517009C0205 /* TabBarController.swift */,
-				61D0DD862027395E003AB105 /* NavigationController.swift */,
 			);
 			path = TabBar;
-			sourceTree = "<group>";
-		};
-		61356F942025B517009C0205 /* Web */ = {
-			isa = PBXGroup;
-			children = (
-				61356F962025B517009C0205 /* WebViewController.storyboard */,
-				61356F952025B517009C0205 /* WebViewController.swift */,
-			);
-			path = Web;
 			sourceTree = "<group>";
 		};
 		61356F972025B517009C0205 /* Menu */ = {
@@ -174,21 +162,39 @@
 			path = Menu;
 			sourceTree = "<group>";
 		};
+		61BA6C1B2039C1E800FDECCB /* Color */ = {
+			isa = PBXGroup;
+			children = (
+				61BA6C1C2039C1E800FDECCB /* ColorViewController.storyboard */,
+				61BA6C1D2039C1E800FDECCB /* ColorViewController.swift */,
+			);
+			path = Color;
+			sourceTree = "<group>";
+		};
+		61BA6C1E2039C1E800FDECCB /* First */ = {
+			isa = PBXGroup;
+			children = (
+				61BA6C202039C1E800FDECCB /* FirstViewController.storyboard */,
+				61BA6C1F2039C1E800FDECCB /* FirstViewController.swift */,
+			);
+			path = First;
+			sourceTree = "<group>";
+		};
+		61BA6C212039C1E800FDECCB /* Second */ = {
+			isa = PBXGroup;
+			children = (
+				61BA6C222039C1E800FDECCB /* SecondViewController.storyboard */,
+				61BA6C232039C1E800FDECCB /* SecondViewController.swift */,
+			);
+			path = Second;
+			sourceTree = "<group>";
+		};
 		61D0DD832025B71C003AB105 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
 				61D0DD842025B744003AB105 /* UIColorExtension.swift */,
 			);
 			path = Extensions;
-			sourceTree = "<group>";
-		};
-		61D0DD8C20297B2A003AB105 /* Nao */ = {
-			isa = PBXGroup;
-			children = (
-				61D0DD8E20297B2A003AB105 /* NaoViewController.storyboard */,
-				61D0DD8D20297B2A003AB105 /* NaoViewController.swift */,
-			);
-			path = Nao;
 			sourceTree = "<group>";
 		};
 		61F27E99203412310024FAF4 /* SwipeMenuViewController */ = {
@@ -218,15 +224,6 @@
 				61F27EA2203412310024FAF4 /* UIViewExtension.swift */,
 			);
 			path = Extensions;
-			sourceTree = "<group>";
-		};
-		61F27EB0203680DC0024FAF4 /* Tanuki */ = {
-			isa = PBXGroup;
-			children = (
-				61F27EB1203680F20024FAF4 /* TanukiViewController.storyboard */,
-				61F27EB3203681030024FAF4 /* TanukiViewController.swift */,
-			);
-			path = Tanuki;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -289,13 +286,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				61D0DD892028A628003AB105 /* nao.jpg in Resources */,
+				61BA6C282039C1E800FDECCB /* SecondViewController.storyboard in Resources */,
 				61356F9A2025B517009C0205 /* Assets.xcassets in Resources */,
-				61F27EB2203680F20024FAF4 /* TanukiViewController.storyboard in Resources */,
-				61D0DD9020297B2A003AB105 /* NaoViewController.storyboard in Resources */,
 				61356F9D2025B517009C0205 /* TabBarController.storyboard in Resources */,
 				61F27EB62036A7A60024FAF4 /* tanuki.jpg in Resources */,
 				61356FA32025B517009C0205 /* MenuViewController.storyboard in Resources */,
-				61356FA22025B517009C0205 /* WebViewController.storyboard in Resources */,
+				61BA6C272039C1E800FDECCB /* FirstViewController.storyboard in Resources */,
+				61BA6C242039C1E800FDECCB /* ColorViewController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -306,19 +303,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				61F27EB4203681030024FAF4 /* TanukiViewController.swift in Sources */,
+				61BA6C292039C1E800FDECCB /* SecondViewController.swift in Sources */,
+				61BA6C262039C1E800FDECCB /* FirstViewController.swift in Sources */,
 				61356F9E2025B517009C0205 /* TabBarController.swift in Sources */,
 				61D0DD8B2029788C003AB105 /* PopAnimatedTransitioning.swift in Sources */,
-				61D0DD872027395E003AB105 /* NavigationController.swift in Sources */,
 				61F27EA6203412310024FAF4 /* TabItemView.swift in Sources */,
+				61BA6C252039C1E800FDECCB /* ColorViewController.swift in Sources */,
 				61F27EAA203412310024FAF4 /* TabView.swift in Sources */,
 				61F27EAC203412310024FAF4 /* UIViewExtension.swift in Sources */,
 				61D0DD852025B744003AB105 /* UIColorExtension.swift in Sources */,
 				61F27EA7203412310024FAF4 /* SwipeMenuViewController.swift in Sources */,
 				61356F9C2025B517009C0205 /* AppDelegate.swift in Sources */,
 				61356FA42025B517009C0205 /* MenuViewController.swift in Sources */,
-				61D0DD8F20297B2A003AB105 /* NaoViewController.swift in Sources */,
-				61356FA12025B517009C0205 /* WebViewController.swift in Sources */,
 				61F27EA9203412310024FAF4 /* SwipeMenuView.swift in Sources */,
 				61356F752024A173009C0205 /* BlowinSwiper.swift in Sources */,
 				61F27EA8203412310024FAF4 /* ContentScrollView.swift in Sources */,

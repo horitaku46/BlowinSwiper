@@ -4,36 +4,21 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Tanuki View Controller-->
+        <!--Color View Controller-->
         <scene sceneID="xib-2u-cfn">
             <objects>
-                <viewController storyboardIdentifier="TanukiViewController" id="YsK-8l-rQ7" customClass="TanukiViewController" customModule="Example" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ColorViewController" id="YsK-8l-rQ7" customClass="ColorViewController" customModule="Example" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="GeD-Rg-V44">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="k9K-sG-zRl">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                            </imageView>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="k9K-sG-zRl" firstAttribute="trailing" secondItem="VRb-gb-KXf" secondAttribute="trailing" id="CAa-Ge-HgV"/>
-                            <constraint firstItem="k9K-sG-zRl" firstAttribute="leading" secondItem="VRb-gb-KXf" secondAttribute="leading" id="cf7-9e-mOA"/>
-                            <constraint firstItem="k9K-sG-zRl" firstAttribute="top" secondItem="GeD-Rg-V44" secondAttribute="top" id="mR0-nW-UNo"/>
-                            <constraint firstItem="k9K-sG-zRl" firstAttribute="bottom" secondItem="VRb-gb-KXf" secondAttribute="bottom" id="zVX-LC-Y6x"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="VRb-gb-KXf"/>
                     </view>
-                    <connections>
-                        <outlet property="imageView" destination="k9K-sG-zRl" id="QHy-FY-P9c"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fBN-n7-4wG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

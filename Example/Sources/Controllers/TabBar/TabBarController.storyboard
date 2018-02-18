@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -29,7 +28,7 @@
         <!--Item 1-->
         <scene sceneID="KiC-Ci-Tj0">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="XjC-df-ibL" customClass="NavigationController" customModule="Example" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="XjC-df-ibL" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item 1" id="jVp-w0-WEu"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="faU-hx-3rE">
@@ -45,10 +44,10 @@
             </objects>
             <point key="canvasLocation" x="393" y="48"/>
         </scene>
-        <!--NaoViewController-->
+        <!--FirstViewController-->
         <scene sceneID="AgP-dy-M3O">
             <objects>
-                <viewControllerPlaceholder storyboardName="NaoViewController" id="iz6-ZK-C4p" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="FirstViewController" id="iz6-ZK-C4p" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="kCA-eD-6sm"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wXj-T3-xsR" userLabel="First Responder" sceneMemberID="firstResponder"/>
