@@ -66,15 +66,15 @@ final class MenuViewController: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
 
+        // Bug: iOS 11.2
+        // https://stackoverflow.com/questions/47754472/ios-uinavigationbar-button-remains-faded-after-segue-back
+        navigationController?.navigationBar.tintAdjustmentMode = .normal
+
         swipeMenuView.contentScrollView?.isScrollEnabled = false
     }
 
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
-
-        // Bug: iOS 11.2
-        // https://stackoverflow.com/questions/47754472/ios-uinavigationbar-button-remains-faded-after-segue-back
-        navigationController?.navigationBar.tintAdjustmentMode = .normal
 
         blowinSwiper?.isShouldRecognizeSimultaneously = false
     }
@@ -87,6 +87,7 @@ final class MenuViewController: UIViewController {
 
     @objc private func tapRightShowBarButtonItem() {
         let viewController = WebViewController.make()
+        viewController.hidesBottomBarWhenPushed = true
         navigationController?.show(viewController, sender: nil)
     }
 }

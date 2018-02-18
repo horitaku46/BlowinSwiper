@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -17,13 +16,42 @@
                     <view key="view" contentMode="scaleToFill" id="CGe-yF-HqV">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jUR-BJ-Njw">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CF4-a0-bhM">
+                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                                <items>
+                                    <barButtonItem title="Item" id="Sqp-ue-Nlh"/>
+                                </items>
+                            </toolbar>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="jUR-BJ-Njw" firstAttribute="bottom" secondItem="CGe-yF-HqV" secondAttribute="bottom" id="5qK-UC-z4D"/>
+                            <constraint firstItem="CF4-a0-bhM" firstAttribute="trailing" secondItem="3ch-i4-7Wj" secondAttribute="trailing" id="J9n-fK-Zag"/>
+                            <constraint firstItem="CF4-a0-bhM" firstAttribute="bottom" secondItem="CGe-yF-HqV" secondAttribute="bottom" id="WTo-XW-N4S"/>
+                            <constraint firstItem="jUR-BJ-Njw" firstAttribute="trailing" secondItem="3ch-i4-7Wj" secondAttribute="trailing" id="dzo-P9-dMb"/>
+                            <constraint firstItem="CF4-a0-bhM" firstAttribute="leading" secondItem="3ch-i4-7Wj" secondAttribute="leading" id="qlo-Ww-xpS"/>
+                            <constraint firstItem="jUR-BJ-Njw" firstAttribute="top" secondItem="CGe-yF-HqV" secondAttribute="top" constant="20" id="xTB-3h-wnZ"/>
+                            <constraint firstItem="jUR-BJ-Njw" firstAttribute="leading" secondItem="3ch-i4-7Wj" secondAttribute="leading" id="yRp-xJ-AcH"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="3ch-i4-7Wj"/>
                     </view>
+                    <connections>
+                        <outlet property="toolBar" destination="CF4-a0-bhM" id="nqq-39-hgJ"/>
+                        <outlet property="webView" destination="jUR-BJ-Njw" id="veq-GY-71A"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dCj-PF-97f" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="60" y="116"/>
+            <point key="canvasLocation" x="62" y="180"/>
         </scene>
     </scenes>
 </document>
