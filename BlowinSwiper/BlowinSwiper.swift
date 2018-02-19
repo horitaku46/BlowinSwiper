@@ -32,7 +32,7 @@ final class BlowinSwiper: NSObject {
         self.navigationController = navigationController
 
         let panGesture = UIPanGestureRecognizer(target: self, action: #selector(handlePanGesture(_:)))
-        panGesture.delegate = self 
+        panGesture.delegate = self
         self.navigationController?.view.addGestureRecognizer(panGesture)
         self.panGesture = panGesture
     }

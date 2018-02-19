@@ -14,6 +14,7 @@
 		61356F9E2025B517009C0205 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61356F902025B517009C0205 /* TabBarController.swift */; };
 		61356FA32025B517009C0205 /* MenuViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 61356F982025B517009C0205 /* MenuViewController.storyboard */; };
 		61356FA42025B517009C0205 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61356F992025B517009C0205 /* MenuViewController.swift */; };
+		6154F5D9203AF94800040F47 /* BlowinSwipeable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6154F5D8203AF94800040F47 /* BlowinSwipeable.swift */; };
 		61BA6C242039C1E800FDECCB /* ColorViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 61BA6C1C2039C1E800FDECCB /* ColorViewController.storyboard */; };
 		61BA6C252039C1E800FDECCB /* ColorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61BA6C1D2039C1E800FDECCB /* ColorViewController.swift */; };
 		61BA6C262039C1E800FDECCB /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61BA6C1F2039C1E800FDECCB /* FirstViewController.swift */; };
@@ -44,6 +45,7 @@
 		61356F902025B517009C0205 /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		61356F982025B517009C0205 /* MenuViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MenuViewController.storyboard; sourceTree = "<group>"; };
 		61356F992025B517009C0205 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		6154F5D8203AF94800040F47 /* BlowinSwipeable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlowinSwipeable.swift; sourceTree = "<group>"; };
 		61BA6C1C2039C1E800FDECCB /* ColorViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ColorViewController.storyboard; sourceTree = "<group>"; };
 		61BA6C1D2039C1E800FDECCB /* ColorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorViewController.swift; sourceTree = "<group>"; };
 		61BA6C1F2039C1E800FDECCB /* FirstViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -140,6 +142,7 @@
 				61BA6C1B2039C1E800FDECCB /* Color */,
 				61BA6C212039C1E800FDECCB /* Second */,
 				61356F8E2025B517009C0205 /* TabBar */,
+				6154F5D8203AF94800040F47 /* BlowinSwipeable.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -310,6 +313,7 @@
 				61F27EA6203412310024FAF4 /* TabItemView.swift in Sources */,
 				61BA6C252039C1E800FDECCB /* ColorViewController.swift in Sources */,
 				61F27EAA203412310024FAF4 /* TabView.swift in Sources */,
+				6154F5D9203AF94800040F47 /* BlowinSwipeable.swift in Sources */,
 				61F27EAC203412310024FAF4 /* UIViewExtension.swift in Sources */,
 				61D0DD852025B744003AB105 /* UIColorExtension.swift in Sources */,
 				61F27EA7203412310024FAF4 /* SwipeMenuViewController.swift in Sources */,
@@ -439,7 +443,7 @@
 				DEVELOPMENT_TEAM = 4ZJ5LV82G2;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = "$(SRCROOT)/Example/Resources/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = TakumaHoriuchi.Example;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -456,7 +460,7 @@
 				DEVELOPMENT_TEAM = 4ZJ5LV82G2;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = "$(SRCROOT)/Example/Resources/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = TakumaHoriuchi.Example;
 				PRODUCT_NAME = "$(TARGET_NAME)";

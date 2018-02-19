@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class SecondViewController: UIViewController {
+final class SecondViewController: UIViewController, BlowinSwipeable {
 
     class func make() -> UIViewController {
         let viewController = UIStoryboard(name: "SecondViewController", bundle: nil)
@@ -16,7 +16,7 @@ final class SecondViewController: UIViewController {
         return viewController
     }
 
-    private var blowinSwiper: BlowinSwiper?
+    var blowinSwiper: BlowinSwiper?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,8 +38,7 @@ final class SecondViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
-        blowinSwiper = BlowinSwiper(navigationController: navigationController)
-        navigationController?.delegate = blowinSwiper
+        setSwipeBack()
     }
 
     @objc private func tapLeftBackBarButtonItem() {

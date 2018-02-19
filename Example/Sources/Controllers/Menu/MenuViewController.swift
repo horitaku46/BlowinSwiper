@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class MenuViewController: UIViewController {
+final class MenuViewController: UIViewController, BlowinSwipeable {
 
     class func make() -> UIViewController {
         let viewController = UIStoryboard(name: "MenuViewController", bundle: nil)
@@ -34,7 +34,7 @@ final class MenuViewController: UIViewController {
                              UIColor(hex: ColorHex.lightBlue),
                              UIColor(hex: ColorHex.lightYellow)]
 
-    private var blowinSwiper: BlowinSwiper?
+    var blowinSwiper: BlowinSwiper?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,12 +55,14 @@ final class MenuViewController: UIViewController {
         super.viewWillAppear(animated)
 
         swipeMenuView.contentScrollView?.isScrollEnabled = true
-
-        blowinSwiper = BlowinSwiper(navigationController: navigationController)
-        navigationController?.delegate = blowinSwiper
+        setSwipeBack()
         if swipeMenuView.contentScrollView?.contentOffset.x == 0 {
             blowinSwiper?.isShouldRecognizeSimultaneously = true
         }
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
     }
 
     override func viewWillDisappear(_ animated: Bool) {
