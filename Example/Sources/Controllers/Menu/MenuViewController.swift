@@ -54,15 +54,11 @@ final class MenuViewController: UIViewController, BlowinSwipeable {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
+        // Enable scrolling by putting finger back during swipe back
         swipeMenuView.contentScrollView?.isScrollEnabled = true
-        setSwipeBack()
-        if swipeMenuView.contentScrollView?.contentOffset.x == 0 {
-            blowinSwiper?.isShouldRecognizeSimultaneously = true
-        }
-    }
 
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
+        setSwipeBack()
+        enabledRecognizeSimultaneously(scrollView: swipeMenuView.contentScrollView)
     }
 
     override func viewWillDisappear(_ animated: Bool) {
@@ -73,13 +69,14 @@ final class MenuViewController: UIViewController, BlowinSwipeable {
         navigationController?.navigationBar.tintAdjustmentMode = .normal
         navigationController?.navigationBar.tintAdjustmentMode = .automatic
 
+        // Stop the scrollView while swiping back
         swipeMenuView.contentScrollView?.isScrollEnabled = false
     }
 
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
 
-        blowinSwiper?.isShouldRecognizeSimultaneously = false
+        disabledRecognizeSimultaneously()
     }
 
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
@@ -97,11 +94,7 @@ final class MenuViewController: UIViewController, BlowinSwipeable {
 extension MenuViewController: SwipeMenuViewDelegate {
 
     func swipeMenuViewDidScroll(_ contentScrollView: UIScrollView) {
-        if floor(contentScrollView.contentOffset.x) == 0 {
-            blowinSwiper?.isShouldRecognizeSimultaneously = true
-        } else {
-            blowinSwiper?.isShouldRecognizeSimultaneously = false
-        }
+        handleScrollRecognizeSimultaneously(scrollView: contentScrollView)
     }
 }
 

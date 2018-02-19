@@ -22,7 +22,6 @@
 		61BA6C282039C1E800FDECCB /* SecondViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 61BA6C222039C1E800FDECCB /* SecondViewController.storyboard */; };
 		61BA6C292039C1E800FDECCB /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61BA6C232039C1E800FDECCB /* SecondViewController.swift */; };
 		61D0DD852025B744003AB105 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61D0DD842025B744003AB105 /* UIColorExtension.swift */; };
-		61D0DD892028A628003AB105 /* nao.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 61D0DD882028A628003AB105 /* nao.jpg */; };
 		61D0DD8B2029788C003AB105 /* PopAnimatedTransitioning.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61D0DD8A2029788C003AB105 /* PopAnimatedTransitioning.swift */; };
 		61F27EA6203412310024FAF4 /* TabItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61F27E9B203412310024FAF4 /* TabItemView.swift */; };
 		61F27EA7203412310024FAF4 /* SwipeMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61F27E9C203412310024FAF4 /* SwipeMenuViewController.swift */; };
@@ -30,7 +29,6 @@
 		61F27EA9203412310024FAF4 /* SwipeMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61F27E9E203412310024FAF4 /* SwipeMenuView.swift */; };
 		61F27EAA203412310024FAF4 /* TabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61F27E9F203412310024FAF4 /* TabView.swift */; };
 		61F27EAC203412310024FAF4 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61F27EA2203412310024FAF4 /* UIViewExtension.swift */; };
-		61F27EB62036A7A60024FAF4 /* tanuki.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 61F27EB52036A7A60024FAF4 /* tanuki.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,7 +51,6 @@
 		61BA6C222039C1E800FDECCB /* SecondViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SecondViewController.storyboard; sourceTree = "<group>"; };
 		61BA6C232039C1E800FDECCB /* SecondViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		61D0DD842025B744003AB105 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
-		61D0DD882028A628003AB105 /* nao.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = nao.jpg; sourceTree = "<group>"; };
 		61D0DD8A2029788C003AB105 /* PopAnimatedTransitioning.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopAnimatedTransitioning.swift; sourceTree = "<group>"; };
 		61F27E9B203412310024FAF4 /* TabItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabItemView.swift; sourceTree = "<group>"; };
 		61F27E9C203412310024FAF4 /* SwipeMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwipeMenuViewController.swift; sourceTree = "<group>"; };
@@ -61,7 +58,6 @@
 		61F27E9E203412310024FAF4 /* SwipeMenuView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwipeMenuView.swift; sourceTree = "<group>"; };
 		61F27E9F203412310024FAF4 /* TabView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabView.swift; sourceTree = "<group>"; };
 		61F27EA2203412310024FAF4 /* UIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
-		61F27EB52036A7A60024FAF4 /* tanuki.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = tanuki.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,8 +113,6 @@
 			children = (
 				61356F892025B517009C0205 /* Assets.xcassets */,
 				61356F8A2025B517009C0205 /* Info.plist */,
-				61D0DD882028A628003AB105 /* nao.jpg */,
-				61F27EB52036A7A60024FAF4 /* tanuki.jpg */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -288,11 +282,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				61D0DD892028A628003AB105 /* nao.jpg in Resources */,
 				61BA6C282039C1E800FDECCB /* SecondViewController.storyboard in Resources */,
 				61356F9A2025B517009C0205 /* Assets.xcassets in Resources */,
 				61356F9D2025B517009C0205 /* TabBarController.storyboard in Resources */,
-				61F27EB62036A7A60024FAF4 /* tanuki.jpg in Resources */,
 				61356FA32025B517009C0205 /* MenuViewController.storyboard in Resources */,
 				61BA6C272039C1E800FDECCB /* FirstViewController.storyboard in Resources */,
 				61BA6C242039C1E800FDECCB /* ColorViewController.storyboard in Resources */,
