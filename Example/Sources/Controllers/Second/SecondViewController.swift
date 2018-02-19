@@ -21,10 +21,7 @@ final class SecondViewController: UIViewController, BlowinSwipeable {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let menuLabel = UILabel()
-        menuLabel.text = "Second"
-        menuLabel.font = UIFont.boldSystemFont(ofSize: 17)
-        navigationItem.titleView = menuLabel
+        navigationItem.titleView = UILabel.navigationItemTitle("Second")
 
         view.backgroundColor = UIColor(hex: ColorHex.purple)
 

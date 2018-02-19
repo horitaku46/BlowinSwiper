@@ -39,10 +39,7 @@ final class MenuViewController: UIViewController, BlowinSwipeable {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let menuLabel = UILabel()
-        menuLabel.text = "Menu"
-        menuLabel.font = UIFont.boldSystemFont(ofSize: 17)
-        navigationItem.titleView = menuLabel
+        navigationItem.titleView = UILabel.navigationItemTitle("Menu")
 
         let rightShowBarButtonItem = UIBarButtonItem(title: "Show",
                                                      style: .plain,
