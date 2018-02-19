@@ -27,6 +27,12 @@ final class SecondViewController: UIViewController {
         navigationItem.titleView = menuLabel
 
         view.backgroundColor = UIColor(hex: ColorHex.purple)
+
+        let leftBackBarButtonItem = UIBarButtonItem(title: "←",
+                                                     style: .plain,
+                                                     target: self,
+                                                     action: #selector(tapLeftBackBarButtonItem))
+        navigationItem.setLeftBarButton(leftBackBarButtonItem, animated: true)
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -34,5 +40,9 @@ final class SecondViewController: UIViewController {
 
         blowinSwiper = BlowinSwiper(navigationController: navigationController)
         navigationController?.delegate = blowinSwiper
+    }
+
+    @objc private func tapLeftBackBarButtonItem() {
+        navigationController?.popViewController(animated: true)
     }
 }
