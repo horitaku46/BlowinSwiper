@@ -61,11 +61,6 @@ final class MenuViewController: UIViewController, BlowinSwipeable {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
 
-        // Bug: iOS 11.2
-        // https://stackoverflow.com/questions/47754472/ios-uinavigationbar-button-remains-faded-after-segue-back
-        navigationController?.navigationBar.tintAdjustmentMode = .normal
-        navigationController?.navigationBar.tintAdjustmentMode = .automatic
-
         // Stop the scrollView while swiping back
         swipeMenuView.contentScrollView?.isScrollEnabled = false
     }
