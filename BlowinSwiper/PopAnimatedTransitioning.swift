@@ -1,6 +1,6 @@
 //
 //  PopAnimatedTransitioning.swift
-//  Example
+//  BlowinSwiper
 //
 //  Created by Takuma Horiuchi on 2018/02/06.
 //  Copyright © 2018年 Takuma Horiuchi. All rights reserved.
