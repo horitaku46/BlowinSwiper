@@ -34,8 +34,7 @@ final class SecondViewController: UIViewController, BlowinSwipeable {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-
-        setSwipeBack()
+        configureSwipeBack()
     }
 
     @objc private func tapLeftBackBarButtonItem() {

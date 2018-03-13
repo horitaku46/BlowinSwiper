@@ -13,6 +13,8 @@ public final class PopAnimatedTransitioning: NSObject, UIViewControllerAnimatedT
     private struct Const {
         static let toViewTransitionRatio: CGFloat = 0.3
         static let titleViewTransitionRatio: CGFloat = 0.52
+        static let normalTransitionDuration = 0.3
+        static let interactivePopTransitionDuration = 0.5
     }
 
     private var isInteractivePop = false
@@ -23,7 +25,7 @@ public final class PopAnimatedTransitioning: NSObject, UIViewControllerAnimatedT
     }
 
     public func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
-        return 0.3
+        return isInteractivePop ? Const.interactivePopTransitionDuration : Const.normalTransitionDuration
     }
 
     public func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {

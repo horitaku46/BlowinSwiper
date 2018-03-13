@@ -17,7 +17,7 @@ public final class BlowinSwiper: NSObject {
     }
 
     private struct Const {
-        static let maxSwipeVelocity: CGFloat = 800
+        static let maxSwipeVelocityX: CGFloat = 500
     }
 
     public var isShouldRecognizeSimultaneously = false
@@ -59,8 +59,8 @@ public final class BlowinSwiper: NSObject {
 
         case .ended, .cancelled:
             isInteractivePop = false
-            let halfWidth = view.bounds.width / 2
-            velocityX > Const.maxSwipeVelocity || translationX > halfWidth ? percentDriven.finish() : percentDriven.cancel()
+            let halfWidth = view.bounds.width / 3
+            velocityX > Const.maxSwipeVelocityX || translationX > halfWidth ? percentDriven.finish() : percentDriven.cancel()
 
         default:
             break

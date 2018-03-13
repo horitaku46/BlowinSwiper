@@ -10,12 +10,12 @@ import UIKit
 
 public protocol BlowinSwipeable: class {
     var blowinSwiper: BlowinSwiper? { get set }
-    func setSwipeBack()
+    func configureSwipeBack()
 }
 
 public extension BlowinSwipeable where Self: UIViewController {
 
-    public func setSwipeBack() {
+    public func configureSwipeBack() {
         guard let navigationController = self.navigationController else { return }
         blowinSwiper = BlowinSwiper(navigationController: navigationController)
         navigationController.delegate = blowinSwiper
