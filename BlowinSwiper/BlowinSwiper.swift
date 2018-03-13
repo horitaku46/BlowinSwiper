@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class BlowinSwiper: NSObject {
+public final class BlowinSwiper: NSObject {
 
     deinit {
         guard let panGesture = panGesture else { return }
@@ -20,14 +20,14 @@ final class BlowinSwiper: NSObject {
         static let maxSwipeVelocity: CGFloat = 800
     }
 
-    var isShouldRecognizeSimultaneously = false
+    public var isShouldRecognizeSimultaneously = false
 
     private var navigationController: UINavigationController?
     private weak var panGesture: UIPanGestureRecognizer?
     private var percentDriven = UIPercentDrivenInteractiveTransition()
     private var isInteractivePop = false
 
-    init(navigationController: UINavigationController?) {
+    public init(navigationController: UINavigationController?) {
         super.init()
         self.navigationController = navigationController
 
@@ -70,18 +70,18 @@ final class BlowinSwiper: NSObject {
 
 extension BlowinSwiper: UIGestureRecognizerDelegate {
 
-    func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
+    public func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
         return navigationController?.viewControllers.count ?? 0 > 1
     }
 
-    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+    public func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
         return isShouldRecognizeSimultaneously
     }
 }
 
 extension BlowinSwiper: UINavigationControllerDelegate {
 
-    func navigationController(_ navigationController: UINavigationController,
+    public func navigationController(_ navigationController: UINavigationController,
                               animationControllerFor operation: UINavigationControllerOperation,
                               from fromVC: UIViewController,
                               to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
@@ -94,7 +94,7 @@ extension BlowinSwiper: UINavigationControllerDelegate {
         }
     }
 
-    func navigationController(_ navigationController: UINavigationController,
+    public func navigationController(_ navigationController: UINavigationController,
                               interactionControllerFor animationController: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
         return isInteractivePop ? percentDriven : nil
     }

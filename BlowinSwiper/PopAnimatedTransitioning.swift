@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class PopAnimatedTransitioning: NSObject, UIViewControllerAnimatedTransitioning {
+public final class PopAnimatedTransitioning: NSObject, UIViewControllerAnimatedTransitioning {
 
     private struct Const {
         static let toViewTransitionRatio: CGFloat = 0.3
@@ -17,16 +17,16 @@ final class PopAnimatedTransitioning: NSObject, UIViewControllerAnimatedTransiti
 
     private var isInteractivePop = false
 
-    init(isInteractivePop: Bool) {
+    public init(isInteractivePop: Bool) {
         super.init()
         self.isInteractivePop = isInteractivePop
     }
 
-    func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
+    public func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
         return 0.3
     }
 
-    func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
+    public func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
         guard let fromViewController = transitionContext.viewController(forKey: .from),
             let toViewController = transitionContext.viewController(forKey: .to) else {
             return

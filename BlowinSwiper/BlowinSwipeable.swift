@@ -8,18 +8,14 @@
 
 import UIKit
 
-protocol BlowinSwipeable: class {
+public protocol BlowinSwipeable: class {
     var blowinSwiper: BlowinSwiper? { get set }
     func setSwipeBack()
-
-    func enabledRecognizeSimultaneously(scrollView: UIScrollView?)
-    func disabledRecognizeSimultaneously(scrollView: UIScrollView?)
-    func handleScrollRecognizeSimultaneously(scrollView: UIScrollView)
 }
 
-extension BlowinSwipeable where Self: UIViewController {
+public extension BlowinSwipeable where Self: UIViewController {
 
-    func setSwipeBack() {
+    public func setSwipeBack() {
         guard let navigationController = self.navigationController else { return }
         blowinSwiper = BlowinSwiper(navigationController: navigationController)
         navigationController.delegate = blowinSwiper
@@ -27,17 +23,17 @@ extension BlowinSwipeable where Self: UIViewController {
 
     // MARK: - Swipe back and scrollView handling
 
-    func enabledRecognizeSimultaneously(scrollView: UIScrollView? = nil) {
+    public func enabledRecognizeSimultaneously(scrollView: UIScrollView? = nil) {
         if scrollView?.contentOffset.x == 0 {
             blowinSwiper?.isShouldRecognizeSimultaneously = true
         }
     }
 
-    func disabledRecognizeSimultaneously(scrollView: UIScrollView? = nil) {
+    public func disabledRecognizeSimultaneously() {
         blowinSwiper?.isShouldRecognizeSimultaneously = false
     }
 
-    func handleScrollRecognizeSimultaneously(scrollView: UIScrollView) {
+    public func handleScrollRecognizeSimultaneously(scrollView: UIScrollView) {
         if floor(scrollView.contentOffset.x) == 0 {
             blowinSwiper?.isShouldRecognizeSimultaneously = true
         } else {
