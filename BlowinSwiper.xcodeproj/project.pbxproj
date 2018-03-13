@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		61356EC92024871F009C0205 /* BlowinSwiper.h in Headers */ = {isa = PBXBuildFile; fileRef = 61356EC72024871F009C0205 /* BlowinSwiper.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		61356EEE20248B5F009C0205 /* BlowinSwiper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61356EED20248B5F009C0205 /* BlowinSwiper.swift */; };
+		615EC44D2057814600F2A392 /* BlowinSwipeable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 615EC44C2057814600F2A392 /* BlowinSwipeable.swift */; };
 		61F27EAF20367B150024FAF4 /* PopAnimatedTransitioning.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61F27EAE20367B150024FAF4 /* PopAnimatedTransitioning.swift */; };
 /* End PBXBuildFile section */
 
@@ -17,6 +18,7 @@
 		61356EC72024871F009C0205 /* BlowinSwiper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BlowinSwiper.h; sourceTree = "<group>"; };
 		61356EC82024871F009C0205 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		61356EED20248B5F009C0205 /* BlowinSwiper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlowinSwiper.swift; sourceTree = "<group>"; };
+		615EC44C2057814600F2A392 /* BlowinSwipeable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlowinSwipeable.swift; sourceTree = "<group>"; };
 		61F27EAE20367B150024FAF4 /* PopAnimatedTransitioning.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopAnimatedTransitioning.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -50,6 +52,7 @@
 		61356EC62024871F009C0205 /* BlowinSwiper */ = {
 			isa = PBXGroup;
 			children = (
+				615EC44C2057814600F2A392 /* BlowinSwipeable.swift */,
 				61356EED20248B5F009C0205 /* BlowinSwiper.swift */,
 				61F27EAE20367B150024FAF4 /* PopAnimatedTransitioning.swift */,
 				61356EC72024871F009C0205 /* BlowinSwiper.h */,
@@ -140,6 +143,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				615EC44D2057814600F2A392 /* BlowinSwipeable.swift in Sources */,
 				61F27EAF20367B150024FAF4 /* PopAnimatedTransitioning.swift in Sources */,
 				61356EEE20248B5F009C0205 /* BlowinSwiper.swift in Sources */,
 			);
