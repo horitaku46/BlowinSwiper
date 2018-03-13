@@ -21,9 +21,9 @@ public final class BlowinSwiper: NSObject {
     }
 
     public var isShouldRecognizeSimultaneously = false
+    public weak var panGesture: UIPanGestureRecognizer?
 
     private var navigationController: UINavigationController?
-    private weak var panGesture: UIPanGestureRecognizer?
     private var percentDriven = UIPercentDrivenInteractiveTransition()
     private var isInteractivePop = false
 
