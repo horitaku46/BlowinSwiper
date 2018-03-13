@@ -23,14 +23,25 @@ public extension BlowinSwipeable where Self: UIViewController {
 
     // MARK: - Swipe back and scrollView handling
 
-    public func enabledRecognizeSimultaneously(scrollView: UIScrollView? = nil) {
-        if scrollView?.contentOffset.x == 0 {
+    public func enabledRecognizeSimultaneously(scrollView: UIScrollView?) {
+        guard let scrollView = scrollView else {
+            return
+        }
+        if scrollView.contentOffset.x == 0 {
             blowinSwiper?.isShouldRecognizeSimultaneously = true
         }
     }
 
     public func disabledRecognizeSimultaneously() {
         blowinSwiper?.isShouldRecognizeSimultaneously = false
+    }
+
+    public func enabledPanGesture() {
+        blowinSwiper?.panGesture?.isEnabled = true
+    }
+
+    public func disabledPanGesture() {
+        blowinSwiper?.panGesture?.isEnabled = false
     }
 
     public func handleScrollRecognizeSimultaneously(scrollView: UIScrollView) {
