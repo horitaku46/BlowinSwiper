@@ -50,7 +50,7 @@ public final class BlowinSwiper: NSObject {
         case .began:
             // only right swipe
             let isZeroTransitionY = isLowSensitivity ? translation.y == 0 : true
-            if velocity.x > 0 && isZeroTransitionY {
+            if translation.x > 0 && isZeroTransitionY {
                 isInteractivePop = true
                 navigationController?.popViewController(animated: true)
             }
@@ -61,8 +61,8 @@ public final class BlowinSwiper: NSObject {
 
         case .ended, .cancelled:
             isInteractivePop = false
-            let halfWidth = view.bounds.width / 3
-            velocity.x > Const.maxSwipeVelocityX || translation.x > halfWidth ? percentDriven.finish() : percentDriven.cancel()
+            let maxWidth = view.bounds.width / 3
+            velocity.x > Const.maxSwipeVelocityX || translation.x > maxWidth ? percentDriven.finish() : percentDriven.cancel()
 
         default:
             break

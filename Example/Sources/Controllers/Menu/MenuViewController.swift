@@ -54,7 +54,7 @@ final class MenuViewController: UIViewController, BlowinSwipeable {
         // Enable scrolling by putting finger back during swipe back
         swipeMenuView.contentScrollView?.isScrollEnabled = true
 
-        configureSwipeBack()
+        configureSwipeBack(isLowSensitivity: true)
         enabledRecognizeSimultaneously(scrollView: swipeMenuView.contentScrollView)
     }
 
