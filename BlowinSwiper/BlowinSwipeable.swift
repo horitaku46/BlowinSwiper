@@ -10,23 +10,22 @@ import UIKit
 
 public protocol BlowinSwipeable: class {
     var blowinSwiper: BlowinSwiper? { get set }
-    func configureSwipeBack()
+    func configureSwipeBack(isLowSensitivity: Bool)
 }
 
 public extension BlowinSwipeable where Self: UIViewController {
 
-    public func configureSwipeBack() {
+    public func configureSwipeBack(isLowSensitivity: Bool = false) {
         guard let navigationController = self.navigationController else { return }
         blowinSwiper = BlowinSwiper(navigationController: navigationController)
+        blowinSwiper?.isLowSensitivity = isLowSensitivity
         navigationController.delegate = blowinSwiper
     }
 
     // MARK: - Swipe back and scrollView handling
 
     public func enabledRecognizeSimultaneously(scrollView: UIScrollView?) {
-        guard let scrollView = scrollView else {
-            return
-        }
+        guard let scrollView = scrollView else { return }
         if scrollView.contentOffset.x == 0 {
             blowinSwiper?.isShouldRecognizeSimultaneously = true
         }
@@ -36,15 +35,8 @@ public extension BlowinSwipeable where Self: UIViewController {
         blowinSwiper?.isShouldRecognizeSimultaneously = false
     }
 
-    public func enabledPanGesture() {
-        blowinSwiper?.panGesture?.isEnabled = true
-    }
-
-    public func disabledPanGesture() {
-        blowinSwiper?.panGesture?.isEnabled = false
-    }
-
-    public func handleScrollRecognizeSimultaneously(scrollView: UIScrollView) {
+    public func handleScrollRecognizeSimultaneously(scrollView: UIScrollView?) {
+        guard let scrollView = scrollView else { return }
         if floor(scrollView.contentOffset.x) == 0 {
             blowinSwiper?.isShouldRecognizeSimultaneously = true
         } else {

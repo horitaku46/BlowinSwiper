@@ -20,8 +20,9 @@ public final class BlowinSwiper: NSObject {
         static let maxSwipeVelocityX: CGFloat = 500
     }
 
-    public var isShouldRecognizeSimultaneously = false
     public weak var panGesture: UIPanGestureRecognizer?
+    public var isShouldRecognizeSimultaneously = false
+    public var isLowSensitivity = false
 
     private var navigationController: UINavigationController?
     private var percentDriven = UIPercentDrivenInteractiveTransition()
@@ -42,25 +43,26 @@ public final class BlowinSwiper: NSObject {
             return
         }
 
-        let translationX = gesture.translation(in: view).x
-        let velocityX = gesture.velocity(in: view).x
+        let translation = gesture.translation(in: view)
+        let velocity = gesture.velocity(in: view)
 
         switch gesture.state {
         case .began:
             // only right swipe
-            if velocityX > 0 {
+            let isZeroTransitionY = isLowSensitivity ? translation.y == 0 : true
+            if velocity.x > 0 && isZeroTransitionY {
                 isInteractivePop = true
                 navigationController?.popViewController(animated: true)
             }
 
         case .changed:
-            let percent = translationX > 0 ? translationX / view.bounds.width : 0
+            let percent = translation.x > 0 ? translation.x / view.bounds.width : 0
             percentDriven.update(percent)
 
         case .ended, .cancelled:
             isInteractivePop = false
             let halfWidth = view.bounds.width / 3
-            velocityX > Const.maxSwipeVelocityX || translationX > halfWidth ? percentDriven.finish() : percentDriven.cancel()
+            velocity.x > Const.maxSwipeVelocityX || translation.x > halfWidth ? percentDriven.finish() : percentDriven.cancel()
 
         default:
             break
