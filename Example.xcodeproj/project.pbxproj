@@ -18,6 +18,7 @@
 		615EC4572057820600F2A392 /* BlowinSwiper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 615EC4522057820500F2A392 /* BlowinSwiper.swift */; };
 		615EC4582057820600F2A392 /* BlowinSwipeable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 615EC4542057820500F2A392 /* BlowinSwipeable.swift */; };
 		615EC4592057820600F2A392 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 615EC4552057820500F2A392 /* Info.plist */; };
+		619C4227205CF76A00A93509 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 619C4226205CF76A00A93509 /* NavigationController.swift */; };
 		61BA6C242039C1E800FDECCB /* ColorViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 61BA6C1C2039C1E800FDECCB /* ColorViewController.storyboard */; };
 		61BA6C252039C1E800FDECCB /* ColorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61BA6C1D2039C1E800FDECCB /* ColorViewController.swift */; };
 		61BA6C262039C1E800FDECCB /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61BA6C1F2039C1E800FDECCB /* FirstViewController.swift */; };
@@ -48,6 +49,7 @@
 		615EC4532057820500F2A392 /* BlowinSwiper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlowinSwiper.h; sourceTree = "<group>"; };
 		615EC4542057820500F2A392 /* BlowinSwipeable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlowinSwipeable.swift; sourceTree = "<group>"; };
 		615EC4552057820500F2A392 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		619C4226205CF76A00A93509 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		61BA6C1C2039C1E800FDECCB /* ColorViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ColorViewController.storyboard; sourceTree = "<group>"; };
 		61BA6C1D2039C1E800FDECCB /* ColorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorViewController.swift; sourceTree = "<group>"; };
 		61BA6C1F2039C1E800FDECCB /* FirstViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -137,6 +139,7 @@
 			children = (
 				61356F8F2025B517009C0205 /* TabBarController.storyboard */,
 				61356F902025B517009C0205 /* TabBarController.swift */,
+				619C4226205CF76A00A93509 /* NavigationController.swift */,
 			);
 			path = TabBar;
 			sourceTree = "<group>";
@@ -316,6 +319,7 @@
 				61D0DD852025B744003AB105 /* UIColorExtension.swift in Sources */,
 				61F27EA7203412310024FAF4 /* SwipeMenuViewController.swift in Sources */,
 				61356F9C2025B517009C0205 /* AppDelegate.swift in Sources */,
+				619C4227205CF76A00A93509 /* NavigationController.swift in Sources */,
 				61356FA42025B517009C0205 /* MenuViewController.swift in Sources */,
 				61F27EA9203412310024FAF4 /* SwipeMenuView.swift in Sources */,
 				61F27EA8203412310024FAF4 /* ContentScrollView.swift in Sources */,

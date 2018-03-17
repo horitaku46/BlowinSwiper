@@ -41,6 +41,16 @@ public final class PopAnimatedTransitioning: NSObject, UIViewControllerAnimatedT
 
         toViewController.view.frame.origin.x = -toViewWidth * Const.toViewTransitionRatio
 
+        /// When hidesBottomBarWhenPushed = true
+        /// and ToolBar to TabBar, adjust origin.
+        let toTabBar = toViewController.tabBarController?.tabBar
+        if let toTabBar = toTabBar {
+            if toTabBar.frame.origin.x < CGFloat(0) {
+                toTabBar.frame.origin.x = -toViewWidth * Const.toViewTransitionRatio
+                containerView.insertSubview(toTabBar, belowSubview: fromViewController.view)
+            }
+        }
+
         let shadowView = makeShadowView(frame: fromViewController.view.frame)
         containerView.insertSubview(shadowView, belowSubview: fromViewController.view)
 
@@ -49,6 +59,7 @@ public final class PopAnimatedTransitioning: NSObject, UIViewControllerAnimatedT
                        options: isInteractivePop ? .curveLinear : .curveEaseOut,
                        animations: {
             toViewController.view.frame.origin.x = 0
+            toTabBar?.frame.origin.x = 0
 
             shadowView.frame.origin.x = toViewWidth
             shadowView.alpha = 0
