@@ -21,12 +21,23 @@ final class FirstViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        navigationItem.title = "First"
+        navigationItem.titleView = UILabel.navigationItemTitle("FIrst")
         view.backgroundColor = UIColor(hex: ColorHex.green)
+
+        let rightShowBarButtonItem = UIBarButtonItem(title: "Show",
+                                                     style: .plain,
+                                                     target: self,
+                                                     action: #selector(tapRightShowBarButtonItem))
+        navigationItem.setRightBarButton(rightShowBarButtonItem, animated: true)
     }
 
     @IBAction func tapShowButton(_ sender: Any) {
         let viewController = MenuViewController.make()
+        navigationController?.show(viewController, sender: nil)
+    }
+
+    @objc private func tapRightShowBarButtonItem() {
+        let viewController = SecondViewController.make()
         navigationController?.show(viewController, sender: nil)
     }
 }

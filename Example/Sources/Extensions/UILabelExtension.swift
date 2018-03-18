@@ -13,6 +13,7 @@ extension UILabel {
     static func navigationItemTitle(_ title: String) -> UILabel {
         let label = UILabel()
         label.text = title
+        label.textColor = .white
         label.font = UIFont.boldSystemFont(ofSize: 17)
         return label
     }

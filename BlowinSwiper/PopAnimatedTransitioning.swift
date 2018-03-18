@@ -38,14 +38,14 @@ public final class PopAnimatedTransitioning: NSObject, UIViewControllerAnimatedT
         let toViewWidth = toViewController.view.bounds.width
 
         containerView.insertSubview(toViewController.view, belowSubview: fromViewController.view)
-
         toViewController.view.frame.origin.x = -toViewWidth * Const.toViewTransitionRatio
 
         /// When hidesBottomBarWhenPushed = true
         /// and ToolBar to TabBar, adjust origin.
-        let toTabBar = toViewController.tabBarController?.tabBar
-        if let toTabBar = toTabBar {
-            if toTabBar.frame.origin.x < CGFloat(0) {
+        var isAnimatedToTabBar = false
+        if let toTabBar = toViewController.tabBarController?.tabBar {
+            isAnimatedToTabBar = toTabBar.frame.origin.x < CGFloat(0) ? true : false
+            if isAnimatedToTabBar {
                 toTabBar.frame.origin.x = -toViewWidth * Const.toViewTransitionRatio
                 containerView.insertSubview(toTabBar, belowSubview: fromViewController.view)
             }
@@ -59,7 +59,7 @@ public final class PopAnimatedTransitioning: NSObject, UIViewControllerAnimatedT
                        options: isInteractivePop ? .curveLinear : .curveEaseOut,
                        animations: {
             toViewController.view.frame.origin.x = 0
-            toTabBar?.frame.origin.x = 0
+            isAnimatedToTabBar ? toViewController.tabBarController?.tabBar.frame.origin.x = 0 : nil
 
             shadowView.frame.origin.x = toViewWidth
             shadowView.alpha = 0
@@ -68,6 +68,11 @@ public final class PopAnimatedTransitioning: NSObject, UIViewControllerAnimatedT
             fromVCTitleView?.frame.origin.x = toViewWidth * Const.titleViewTransitionRatio
         }) { _ in
             shadowView.removeFromSuperview()
+            /// When hidesBottomBarWhenPushed = true
+            /// Because containerView on tabBar
+            if let tabBarController = toViewController.tabBarController {
+                isAnimatedToTabBar ? tabBarController.view.addSubview(tabBarController.tabBar) : nil
+            }
             transitionContext.completeTransition(!transitionContext.transitionWasCancelled)
         }
     }

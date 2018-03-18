@@ -17,6 +17,12 @@ final class SecondViewController: UIViewController, BlowinSwipeable {
         return viewController
     }
 
+    @IBOutlet weak var toolBar: UIToolbar! {
+        didSet {
+            toolBar.barTintColor = .darkGray
+        }
+    }
+
     var blowinSwiper: BlowinSwiper?
 
     override func viewDidLoad() {
