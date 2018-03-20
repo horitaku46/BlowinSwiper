@@ -27,9 +27,7 @@ final class SecondViewController: UIViewController, BlowinSwipeable {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         navigationItem.titleView = UILabel.navigationItemTitle("Second")
-
         view.backgroundColor = UIColor(hex: ColorHex.purple)
 
         let leftBackBarButtonItem = UIBarButtonItem(title: "←",
@@ -39,8 +37,8 @@ final class SecondViewController: UIViewController, BlowinSwipeable {
         navigationItem.setLeftBarButton(leftBackBarButtonItem, animated: true)
     }
 
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         configureSwipeBack()
     }
 

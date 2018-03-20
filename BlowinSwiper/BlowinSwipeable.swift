@@ -16,7 +16,7 @@ public protocol BlowinSwipeable: class {
 public extension BlowinSwipeable where Self: UIViewController {
 
     public func configureSwipeBack(isLowSensitivity: Bool = false) {
-        guard let navigationController = self.navigationController else { return }
+        guard let navigationController = navigationController else { return }
         blowinSwiper = BlowinSwiper(navigationController: navigationController)
         blowinSwiper?.isLowSensitivity = isLowSensitivity
         navigationController.delegate = blowinSwiper
@@ -28,6 +28,8 @@ public extension BlowinSwipeable where Self: UIViewController {
         guard let scrollView = scrollView else { return }
         if scrollView.contentOffset.x == 0 {
             blowinSwiper?.isShouldRecognizeSimultaneously = true
+        } else {
+            blowinSwiper?.isShouldRecognizeSimultaneously = false
         }
     }
 

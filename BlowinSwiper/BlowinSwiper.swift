@@ -27,6 +27,7 @@ public final class BlowinSwiper: NSObject {
     private var navigationController: UINavigationController?
     private var percentDriven = UIPercentDrivenInteractiveTransition()
     private var isInteractivePop = false
+    private var isDecideBack = false
 
     public init(navigationController: UINavigationController?) {
         super.init()
@@ -39,6 +40,9 @@ public final class BlowinSwiper: NSObject {
     }
 
     @objc private func handlePanGesture(_ gesture: UIPanGestureRecognizer) {
+        // order not to the extra swipe during transition.
+        if isDecideBack { return }
+
         guard let view = gesture.view else {
             return
         }
@@ -59,10 +63,13 @@ public final class BlowinSwiper: NSObject {
             let percent = translation.x > 0 ? translation.x / view.bounds.width : 0
             percentDriven.update(percent)
 
-        case .ended, .cancelled:
-            isInteractivePop = false
-            let maxWidth = view.bounds.width / 3
-            velocity.x > Const.maxSwipeVelocityX || translation.x > maxWidth ? percentDriven.finish() : percentDriven.cancel()
+        case .ended, .failed, .cancelled:
+            if isInteractivePop {
+                isInteractivePop = false
+                let maxWidth = view.bounds.width / 3
+                isDecideBack = velocity.x > Const.maxSwipeVelocityX || translation.x > maxWidth
+                isDecideBack ? percentDriven.finish() : percentDriven.cancel()
+            }
 
         default:
             break
@@ -76,7 +83,8 @@ extension BlowinSwiper: UIGestureRecognizerDelegate {
         return navigationController?.viewControllers.count ?? 0 > 1
     }
 
-    public func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+    public func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer,
+                                  shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
         return isShouldRecognizeSimultaneously
     }
 }
@@ -84,9 +92,9 @@ extension BlowinSwiper: UIGestureRecognizerDelegate {
 extension BlowinSwiper: UINavigationControllerDelegate {
 
     public func navigationController(_ navigationController: UINavigationController,
-                              animationControllerFor operation: UINavigationControllerOperation,
-                              from fromVC: UIViewController,
-                              to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+                                     animationControllerFor operation: UINavigationControllerOperation,
+                                     from fromVC: UIViewController,
+                                     to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         switch operation {
         case .pop:
             return PopAnimatedTransitioning(isInteractivePop: isInteractivePop)
@@ -97,7 +105,7 @@ extension BlowinSwiper: UINavigationControllerDelegate {
     }
 
     public func navigationController(_ navigationController: UINavigationController,
-                              interactionControllerFor animationController: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
+                                     interactionControllerFor animationController: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
         return isInteractivePop ? percentDriven : nil
     }
 }

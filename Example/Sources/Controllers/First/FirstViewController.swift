@@ -21,7 +21,7 @@ final class FirstViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        navigationItem.titleView = UILabel.navigationItemTitle("FIrst")
+        navigationItem.titleView = UILabel.navigationItemTitle("First")
         view.backgroundColor = UIColor(hex: ColorHex.green)
 
         let rightShowBarButtonItem = UIBarButtonItem(title: "Show",
