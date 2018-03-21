@@ -18,7 +18,7 @@ I developed `BlowinSwiper` for handling with various gestures. But only right sw
 </p>
 
 ## Features
-<img src="https://github.com/horitaku46/Assets/blob/master/BlowinSwiper/twitter_search.png" align="right" width="210">
+<img src="https://github.com/horitaku46/Assets/blob/master/BlowinSwiper/twitter_search.png" align="right" width="220">
 
 In this library, I considered what to do the handling of the horizontal scroll. It is like a search screen on Twitter Client App.  
 It is the screen on the right.
