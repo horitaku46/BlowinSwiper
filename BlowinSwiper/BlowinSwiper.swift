@@ -43,9 +43,7 @@ public final class BlowinSwiper: NSObject {
         // order not to the extra swipe during transition.
         if isDecideBack { return }
 
-        guard let view = gesture.view else {
-            return
-        }
+        guard let view = gesture.view else { return }
 
         let translation = gesture.translation(in: view)
         let velocity = gesture.velocity(in: view)

@@ -32,6 +32,7 @@
 		61F27EA9203412310024FAF4 /* SwipeMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61F27E9E203412310024FAF4 /* SwipeMenuView.swift */; };
 		61F27EAA203412310024FAF4 /* TabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61F27E9F203412310024FAF4 /* TabView.swift */; };
 		61F27EAC203412310024FAF4 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61F27EA2203412310024FAF4 /* UIViewExtension.swift */; };
+		61F5408820616167006E11FB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 61F5408720616167006E11FB /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,6 +64,7 @@
 		61F27E9E203412310024FAF4 /* SwipeMenuView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwipeMenuView.swift; sourceTree = "<group>"; };
 		61F27E9F203412310024FAF4 /* TabView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabView.swift; sourceTree = "<group>"; };
 		61F27EA2203412310024FAF4 /* UIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
+		61F5408720616167006E11FB /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +106,7 @@
 		61356F882025B517009C0205 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				61F5408720616167006E11FB /* LaunchScreen.storyboard */,
 				61356F892025B517009C0205 /* Assets.xcassets */,
 				61356F8A2025B517009C0205 /* Info.plist */,
 			);
@@ -291,6 +294,7 @@
 			files = (
 				61BA6C282039C1E800FDECCB /* SecondViewController.storyboard in Resources */,
 				61356F9A2025B517009C0205 /* Assets.xcassets in Resources */,
+				61F5408820616167006E11FB /* LaunchScreen.storyboard in Resources */,
 				61356F9D2025B517009C0205 /* TabBarController.storyboard in Resources */,
 				61356FA32025B517009C0205 /* MenuViewController.storyboard in Resources */,
 				61BA6C272039C1E800FDECCB /* FirstViewController.storyboard in Resources */,

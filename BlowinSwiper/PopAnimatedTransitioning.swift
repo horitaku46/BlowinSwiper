@@ -34,8 +34,8 @@ public final class PopAnimatedTransitioning: NSObject, UIViewControllerAnimatedT
             return
         }
         let containerView = transitionContext.containerView
-        let fromVCTitleView = fromViewController.navigationItem.titleView
         let toViewWidth = toViewController.view.bounds.width
+        let fromVCTitleView = fromViewController.navigationItem.titleView
 
         containerView.insertSubview(toViewController.view, belowSubview: fromViewController.view)
         toViewController.view.frame.origin.x = -toViewWidth * Const.toViewTransitionRatio

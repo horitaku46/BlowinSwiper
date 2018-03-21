@@ -11,6 +11,9 @@ import UIKit
 public protocol BlowinSwipeable: class {
     var blowinSwiper: BlowinSwiper? { get set }
     func configureSwipeBack(isLowSensitivity: Bool)
+    func enabledRecognizeSimultaneously(scrollView: UIScrollView?)
+    func disabledRecognizeSimultaneously()
+    func handleScrollRecognizeSimultaneously(scrollView: UIScrollView?)
 }
 
 public extension BlowinSwipeable where Self: UIViewController {
