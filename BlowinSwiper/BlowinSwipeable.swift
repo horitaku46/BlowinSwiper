@@ -10,7 +10,7 @@ import UIKit
 
 public protocol BlowinSwipeable: class {
     var blowinSwiper: BlowinSwiper? { get set }
-    func configureSwipeBack(isLowSensitivity: Bool)
+    func configureSwipeBack(isInsensitive: Bool)
     func enabledRecognizeSimultaneously(scrollView: UIScrollView?)
     func disabledRecognizeSimultaneously()
     func handleScrollRecognizeSimultaneously(scrollView: UIScrollView?)
@@ -18,10 +18,10 @@ public protocol BlowinSwipeable: class {
 
 public extension BlowinSwipeable where Self: UIViewController {
 
-    public func configureSwipeBack(isLowSensitivity: Bool = false) {
+    public func configureSwipeBack(isInsensitive: Bool = false) {
         guard let navigationController = navigationController else { return }
         blowinSwiper = BlowinSwiper(navigationController: navigationController)
-        blowinSwiper?.isLowSensitivity = isLowSensitivity
+        blowinSwiper?.isInsensitive = isInsensitive
         navigationController.delegate = blowinSwiper
     }
 

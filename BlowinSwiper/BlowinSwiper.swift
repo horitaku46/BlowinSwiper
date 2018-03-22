@@ -18,16 +18,18 @@ public final class BlowinSwiper: NSObject {
 
     private struct Const {
         static let maxSwipeVelocityX: CGFloat = 500
+        static let absoluteInsensitiveRangeY: CGFloat = 10
     }
 
     public weak var panGesture: UIPanGestureRecognizer?
     public var isShouldRecognizeSimultaneously = false
-    public var isLowSensitivity = false
+    public var isInsensitive = false
 
     private var navigationController: UINavigationController?
     private var percentDriven = UIPercentDrivenInteractiveTransition()
     private var isInteractivePop = false
     private var isDecideBack = false
+    private var isOnceGestureBegan = true
 
     public init(navigationController: UINavigationController?) {
         super.init()
@@ -40,38 +42,50 @@ public final class BlowinSwiper: NSObject {
     }
 
     @objc private func handlePanGesture(_ gesture: UIPanGestureRecognizer) {
-        // order not to the extra swipe during transition.
+        // order not to the extra swipe during screen transition.
+        // When swiping before instance is destroyed.
         if isDecideBack { return }
 
         guard let view = gesture.view else { return }
-
         let translation = gesture.translation(in: view)
         let velocity = gesture.velocity(in: view)
 
-        switch gesture.state {
-        case .began:
+        // iPad is less sensitive to gesture than the iPhone.
+        // Because iPad gets zero when the state starts, it does not know the direction.
+        if translation == .zero { return }
+        if isOnceGestureBegan {
             // only right swipe
-            let isZeroTransitionY = isLowSensitivity ? translation.y == 0 : true
+            let isZeroTransitionY = isInsensitive ? isInsensitiveRangeY(translation.y) : true
             if translation.x > 0 && isZeroTransitionY {
                 isInteractivePop = true
                 navigationController?.popViewController(animated: true)
             }
+            isOnceGestureBegan = false
+        }
 
+        switch gesture.state {
         case .changed:
             let percent = translation.x > 0 ? translation.x / view.bounds.width : 0
             percentDriven.update(percent)
 
         case .ended, .failed, .cancelled:
             if isInteractivePop {
-                isInteractivePop = false
                 let maxWidth = view.bounds.width / 3
                 isDecideBack = velocity.x > Const.maxSwipeVelocityX || translation.x > maxWidth
                 isDecideBack ? percentDriven.finish() : percentDriven.cancel()
+                isInteractivePop = false
             }
+            isOnceGestureBegan = true
 
         default:
             break
         }
+    }
+
+    private func isInsensitiveRangeY(_ translationY: CGFloat) -> Bool {
+        let y = Const.absoluteInsensitiveRangeY
+        if case -y...y = translationY { return true }
+        return false
     }
 }
 

@@ -4,6 +4,7 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -16,13 +17,28 @@
                     <view key="view" contentMode="scaleToFill" id="GeD-Rg-V44">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="aNg-yF-cA0">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="aNg-yF-cA0" firstAttribute="top" secondItem="GeD-Rg-V44" secondAttribute="top" id="Pxu-Ug-oCG"/>
+                            <constraint firstItem="aNg-yF-cA0" firstAttribute="bottom" secondItem="VRb-gb-KXf" secondAttribute="bottom" id="ZMC-33-7h4"/>
+                            <constraint firstItem="aNg-yF-cA0" firstAttribute="leading" secondItem="VRb-gb-KXf" secondAttribute="leading" id="eSb-eZ-uYX"/>
+                            <constraint firstItem="aNg-yF-cA0" firstAttribute="trailing" secondItem="VRb-gb-KXf" secondAttribute="trailing" id="ukK-Cn-7yI"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="VRb-gb-KXf"/>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="aNg-yF-cA0" id="nk0-9J-1aT"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fBN-n7-4wG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-348" y="106"/>
+            <point key="canvasLocation" x="-479.19999999999999" y="106.59670164917542"/>
         </scene>
     </scenes>
 </document>

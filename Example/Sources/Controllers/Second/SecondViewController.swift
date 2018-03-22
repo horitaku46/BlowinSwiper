@@ -10,7 +10,7 @@ import UIKit
 
 final class SecondViewController: UIViewController, BlowinSwipeable {
 
-    class func make() -> UIViewController {
+    class func make() -> SecondViewController {
         let viewController = UIStoryboard(name: "SecondViewController", bundle: nil)
             .instantiateViewController(withIdentifier: "SecondViewController") as! SecondViewController
         viewController.hidesBottomBarWhenPushed = true

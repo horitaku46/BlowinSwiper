@@ -10,7 +10,7 @@ import UIKit
 
 final class MenuViewController: UIViewController, BlowinSwipeable {
 
-    class func make() -> UIViewController {
+    class func make() -> MenuViewController {
         let viewController = UIStoryboard(name: "MenuViewController", bundle: nil)
             .instantiateViewController(withIdentifier: "MenuViewController") as! MenuViewController
         return viewController
@@ -18,14 +18,12 @@ final class MenuViewController: UIViewController, BlowinSwipeable {
 
     @IBOutlet weak var swipeMenuView: SwipeMenuView! {
         didSet {
-            var options = SwipeMenuViewOptions()
-            options.tabView.style                         = .segmented
-            options.tabView.underlineView.backgroundColor = .black
-            options.tabView.itemView.textColor            = .gray
-            options.tabView.itemView.selectedTextColor    = .black
+            swipeMenuView.options.tabView.style                         = .segmented
+            swipeMenuView.options.tabView.underlineView.backgroundColor = .black
+            swipeMenuView.options.tabView.itemView.textColor            = .gray
+            swipeMenuView.options.tabView.itemView.selectedTextColor    = .black
             swipeMenuView.delegate = self
             swipeMenuView.dataSource = self
-            swipeMenuView.reloadData(options: options)
         }
     }
 
@@ -33,6 +31,8 @@ final class MenuViewController: UIViewController, BlowinSwipeable {
                              UIColor(hex: ColorHex.purple),
                              UIColor(hex: ColorHex.lightBlue),
                              UIColor(hex: ColorHex.lightYellow)]
+
+    var viewControllers = [ColorViewController]()
 
     var blowinSwiper: BlowinSwiper?
 
@@ -46,6 +46,9 @@ final class MenuViewController: UIViewController, BlowinSwipeable {
                                                      target: self,
                                                      action: #selector(tapRightShowBarButtonItem))
         navigationItem.setRightBarButton(rightShowBarButtonItem, animated: true)
+
+        viewColor.forEach { viewControllers.append(ColorViewController.make(backgroundColor: $0)) }
+        swipeMenuView.reloadData()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -56,7 +59,7 @@ final class MenuViewController: UIViewController, BlowinSwipeable {
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        configureSwipeBack(isLowSensitivity: true)
+        configureSwipeBack(isInsensitive: true)
         enabledRecognizeSimultaneously(scrollView: swipeMenuView.contentScrollView)
     }
 
@@ -92,7 +95,7 @@ extension MenuViewController: SwipeMenuViewDelegate {
 extension MenuViewController: SwipeMenuViewDataSource {
 
     func numberOfPages(in swipeMenuView: SwipeMenuView) -> Int {
-        return viewColor.count
+        return viewControllers.count
     }
 
     func swipeMenuView(_ swipeMenuView: SwipeMenuView, titleForPageAt index: Int) -> String {
@@ -100,7 +103,6 @@ extension MenuViewController: SwipeMenuViewDataSource {
     }
 
     func swipeMenuView(_ swipeMenuView: SwipeMenuView, viewControllerForPageAt index: Int) -> UIViewController {
-        let viewController = ColorViewController.make(self, backgroundColor: viewColor[index])
-        return viewController
+        return viewControllers[index]
     }
 }
