@@ -106,7 +106,7 @@ final class ViewController: UIViewController, BlowinSwipeable {
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        configureSwipeBack(isLowSensitivity: true)
+        configureSwipeBack(isInsensitive: true)
         enabledRecognizeSimultaneously(scrollView: swipeMenuView.contentScrollView)
     }
 
