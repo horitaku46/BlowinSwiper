@@ -51,7 +51,7 @@ github "horitaku46/BlowinSwiper"
 ```
 
 ## Usage
-**See [Example](https://github.com/horitaku46/Serrata/tree/master/Example), for more details.**
+**See [Example](https://github.com/horitaku46/BlowinSwiper/tree/master/Example), for more details.**
 
 ### Normal
 **《１》** Please add `UIGestureRecognizerDelegate` to `UINavigationController`. Because to enable edge swipe back.
