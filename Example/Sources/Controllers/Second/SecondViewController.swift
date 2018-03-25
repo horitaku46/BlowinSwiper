@@ -30,7 +30,7 @@ final class SecondViewController: UIViewController, BlowinSwipeable {
         navigationItem.titleView = UILabel.navigationItemTitle("Second")
         view.backgroundColor = UIColor(hex: ColorHex.purple)
 
-        let leftBackBarButtonItem = UIBarButtonItem(title: "←",
+        let leftBackBarButtonItem = UIBarButtonItem(title: "≪",
                                                     style: .plain,
                                                     target: self,
                                                     action: #selector(tapLeftBackBarButtonItem))
