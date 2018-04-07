@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
     s.name        = "BlowinSwiper"
-    s.version     = "1.0.13"
+    s.version     = "1.0.14"
     s.summary     = "BlowinSwiper makes it possible to swipe back from anywhere on the screen."
     s.description = <<-DESC
                     BlowinSwiper makes it possible to swipe back from anywhere on the screen at UINavigationController!
