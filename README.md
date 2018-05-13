@@ -35,6 +35,9 @@ Sample is thinking about handling with [SwipeMenuViewController](https://github.
 <br>
 <br>
 
+## Translation
+Mr. [Gargo](https://github.com/Gargo) translated [this README into Russian](http://gargo.of.by/blowinswiper/)!🙇‍♂️
+
 ## Requirements
 - Xcode 9.0+
 - iOS 10+
