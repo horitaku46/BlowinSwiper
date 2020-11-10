@@ -30,10 +30,12 @@ public final class BlowinSwiper: NSObject {
     private var isInteractivePop = false
     private var isDecideBack = false
     private var isOnceGestureBegan = true
+    private var deferredDelegate: UINavigationControllerDelegate?
 
     public init(navigationController: UINavigationController?) {
         super.init()
         self.navigationController = navigationController
+        self.deferredDelegate = navigationController?.delegate
 
         let panGesture = UIPanGestureRecognizer(target: self, action: #selector(handlePanGesture(_:)))
         panGesture.delegate = self
@@ -102,22 +104,50 @@ extension BlowinSwiper: UIGestureRecognizerDelegate {
 }
 
 extension BlowinSwiper: UINavigationControllerDelegate {
+    public func navigationController(_ navigationController: UINavigationController,
+                                     willShow viewController: UIViewController,
+                                     animated: Bool) {
+      deferredDelegate?.navigationController?(navigationController, willShow: viewController, animated: animated)
+    }
 
     public func navigationController(_ navigationController: UINavigationController,
-                                     animationControllerFor operation: UINavigationControllerOperation,
+                                     didShow viewController: UIViewController,
+                                     animated: Bool) {
+      deferredDelegate?.navigationController?(navigationController, didShow: viewController, animated: animated)
+    }
+
+    public func navigationController(_ navigationController: UINavigationController,
+                                     animationControllerFor operation: UINavigationController.Operation,
                                      from fromVC: UIViewController,
                                      to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        let deferredValue = deferredDelegate?.navigationController?(
+          navigationController, animationControllerFor: operation, from: fromVC, to: toVC
+        )
         switch operation {
         case .pop:
             return PopAnimatedTransitioning(isInteractivePop: isInteractivePop)
 
         default:
-            return nil
+            return deferredValue
         }
     }
 
     public func navigationController(_ navigationController: UINavigationController,
                                      interactionControllerFor animationController: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
-        return isInteractivePop ? percentDriven : nil
+      return isInteractivePop
+        ? percentDriven
+        : deferredDelegate?.navigationController?(navigationController, interactionControllerFor: animationController)
+    }
+
+    public func navigationControllerSupportedInterfaceOrientations(
+      _ navigationController: UINavigationController
+    ) -> UIInterfaceOrientationMask {
+      return deferredDelegate?.navigationControllerSupportedInterfaceOrientations?(navigationController) ?? [.all]
+    }
+
+    public func navigationControllerPreferredInterfaceOrientationForPresentation(
+      _ navigationController: UINavigationController
+    ) -> UIInterfaceOrientation {
+      return deferredDelegate?.navigationControllerPreferredInterfaceOrientationForPresentation?(navigationController) ?? .unknown
     }
 }
